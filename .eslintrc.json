@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "@gravity-ui/eslint-config",
+    "@gravity-ui/eslint-config/a11y",
+    "@gravity-ui/eslint-config/prettier",
+    "@gravity-ui/eslint-config/import-order"
+  ],
+  "rules": {
+    "no-implicit-globals": "off",
+    "new-cap": "off",
+    "prettier/prettier": "error",
+    "import/order": "warn",
+    "import/no-extraneous-dependencies": "off"
+  }
 }

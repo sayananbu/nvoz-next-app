@@ -1,0 +1,5 @@
+.block-header {
+  &__subtitle {
+    text-transform: uppercase;
+  }
+}

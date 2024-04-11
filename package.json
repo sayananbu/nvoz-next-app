@@ -6,19 +6,40 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier . --write"
   },
+  "browserslist": [
+    "extends @gravity-ui/browserslist-config"
+  ],
   "dependencies": {
+    "@diplodoc/transform": "^4.11.0",
+    "@gravity-ui/page-constructor": "^5.7.1",
+    "lottie-react": "^2.4.0",
+    "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "react-lottie-player": "^2.0.0",
+    "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@gravity-ui/browserslist-config": "^4.3.0",
+    "@gravity-ui/components": "^3.3.0",
+    "@gravity-ui/eslint-config": "^3.1.1",
+    "@gravity-ui/icons": "^2.9.1",
+    "@gravity-ui/prettier-config": "^1.1.0",
+    "@gravity-ui/tsconfig": "^1.0.0",
+    "@gravity-ui/uikit": "^6.10.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.4"
+    "eslint-config-next": "14.1.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.5.4",
+    "prettier": "^3.2.5",
+    "typescript": "^5"
   }
 }

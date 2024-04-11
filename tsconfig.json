@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -18,9 +19,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "~app/*": ["src/app/*"],
+      "~pages/*": ["src/pages/*"],
+      "~widgets/*": ["src/widgets/*"],
+      "~features/*": ["src/features/*"],
+      "~entities/*": ["src/entities/*"],
+      "~shared/*": ["src/shared/*"]
+    },
+    "strictNullChecks": true
   },
+  "extends": "@gravity-ui/tsconfig/tsconfig.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
