@@ -6,17 +6,20 @@
   --width-xxl: 1400px;
   --width-xxxl: 1920px;
 
-	--font-weight-normal:400;
-	--font-weight-medium:500;
-	--font-weight-bold:700;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --color-brand-second: #ff8e39;
 }
-html,body{
-	position: relative;
-	overflow: hidden auto;
-	min-width: 100vw;
+html,
+body {
+  position: relative;
+  overflow: hidden auto;
+  min-width: 100vw;
   min-height: 100vh;
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
   display: flex;

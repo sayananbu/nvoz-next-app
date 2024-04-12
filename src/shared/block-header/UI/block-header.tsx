@@ -1,6 +1,8 @@
+'use client';
 import React, { FC } from 'react';
-import { Flex, Text } from '@gravity-ui/uikit';
+
 import { cn } from '@gravity-ui/page-constructor';
+import { Flex, Text } from '@gravity-ui/uikit';
 
 interface BlockHeaderProps {
   children: string;

@@ -18,6 +18,10 @@
     position: relative;
     z-index: 90;
     padding-left: calc(var(--g-spacing-10) * 3);
+
+    h1 {
+      margin-top: var(--g-spacing-5);
+    }
   }
 
   &__description {
@@ -26,12 +30,12 @@
   }
 
   &__action-button {
-    margin-top: var(--g-spacing-10);
+    margin-top: calc(var(--g-spacing-10) * 2);
     font-size: var(--g-text-header-2-font-size) !important;
     padding: var(--g-spacing-2) var(--g-spacing-2) !important;
-		box-sizing: content-box;
-		height: fit-content !important;
-		width: fit-content !important;
+    box-sizing: content-box;
+    height: fit-content !important;
+    width: fit-content !important;
   }
 
   &__hero {
@@ -42,16 +46,23 @@
     width: 900px;
   }
 
-  &__bottom-vawe {
-    position: absolute;
-    bottom: -550px;
-    left: 0;
+  &__wave {
+    position: relative;
     width: 100vw;
+    overflow: hidden;
+    height: 300px;
+
+    &__animation {
+      width: 100%;
+      position: absolute;
+      bottom: -300px;
+      left: 0;
+    }
   }
 
   &__animated-text {
-		display: inline-block;
-    margin-top: calc(var(--g-spacing-10) * 4);
+    display: inline-block;
+    margin-top: calc(var(--g-spacing-10) * 3);
     max-width: 580px;
     height: 150px;
   }
@@ -59,8 +70,27 @@
   &__animated-arrow {
     position: absolute;
     z-index: 80;
-    bottom: 180px;
-    left: 0;
-    transform: rotate(80deg);
+    bottom: 190px;
+    left: -20px;
+    transform: rotate(90deg);
+  }
+
+  &__slogan {
+    position: relative;
+
+    &__animation {
+      position: absolute;
+      left: -100px;
+      top: 100px;
+      width: 700px;
+    }
+
+    &__title {
+      margin-bottom: var(--g-spacing-10);
+    }
+
+    &__container {
+      width: 600px;
+    }
   }
 }
