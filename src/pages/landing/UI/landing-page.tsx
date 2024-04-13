@@ -1,14 +1,13 @@
-'use client';
 import React, { FC } from 'react';
 
-import { cn } from '@gravity-ui/page-constructor';
-import { Button, Flex, Text } from '@gravity-ui/uikit';
-import Lottie from 'react-lottie-player';
-import { TypeAnimation } from 'react-type-animation';
+import { Text } from '@gravity-ui/uikit';
 
 import AnimatedArrow from '~shared/animated-arrow';
 import BlockHeader from '~shared/block-header';
+import Button from '~shared/button';
+import Lottie from '~shared/lottie';
 import StepperBlock from '~shared/stepper-block';
+import TypeAnimation from '~shared/type-animation';
 import OurServices from '~widgets/our-services';
 
 import { advantages, typingText } from '../model/data';
@@ -16,6 +15,7 @@ import { advantages, typingText } from '../model/data';
 import chillAnim from 'public/assets/chill.json';
 import houseDealHero from 'public/assets/house_deal.json';
 import wavesAnim from 'public/assets/waves.json';
+import cn from '~shared/utils/cn';
 
 const cx = cn('landing-page');
 
@@ -27,19 +27,19 @@ const LandingPage: FC = () => {
   return (
     <>
       <div className={cx()}>
-        <Flex as="header" direction="column" className={cx('header')}>
+        <div className={cx('header')}>
           <article className={cx('about')}>
             <Text as="h2" variant="display-2">
               1-ая риэлторская компания
             </Text>
-            <Flex direction="column" gap="1">
+            <div>
               <Text as="h1" color="brand" variant="display-4">
                 «Новое Время»
               </Text>
               <Text as="h4" variant="body-3">
                 г. Орехово-Зуево, ул. Якова Флиера, д. 9
               </Text>
-            </Flex>
+            </div>
             <Button size="xl" view="action" className={cx('action-button')}>
               Оставить заявку
             </Button>
@@ -61,11 +61,11 @@ const LandingPage: FC = () => {
             />
           </Text>
           <Lottie play speed={0.5} animationData={houseDealHero} className={cx('hero')} />
-        </Flex>
-        <Flex as="section" direction="column" alignItems="flex-end" className={cx('slogan')}>
+        </div>
+        <section className={cx('slogan')}>
           <Lottie play animationData={chillAnim} className={cx('slogan__animation')} />
-          <Flex direction="column" alignItems="center" className={cx('slogan__container')}>
-            <Flex direction="column" gap="2" alignItems="center" className={cx('slogan__title')}>
+          <div className={cx('slogan__container')}>
+            <article className={cx('slogan__title')}>
               <Text as="h2" variant="display-2">
                 Новое время — новые{' '}
                 <Text variant="display-2" color="brand">
@@ -73,10 +73,10 @@ const LandingPage: FC = () => {
                 </Text>
               </Text>
               <Text variant="header-2">Или почему обращаются именно к Нам</Text>
-            </Flex>
+            </article>
             {advantages?.map((advantage, i) => <StepperBlock key={i} {...advantage} />)}
-          </Flex>
-        </Flex>
+          </div>
+        </section>
         <main className={cx('main')}>
           <section>
             <BlockHeader className={cx('services-header')}>Наши услуги</BlockHeader>

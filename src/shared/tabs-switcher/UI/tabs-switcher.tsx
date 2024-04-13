@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, useState } from 'react';
 
 import { cn } from '@gravity-ui/page-constructor';
@@ -18,6 +19,7 @@ const TabsSwitcher: FC<TabsSwitcherProps> = (props) => {
   const { items, initTabId, onTabChange } = props;
 
   const [selectedTabId, setSelectedTabId] = useState<TabItem['id']>(initTabId || items[0].id);
+
   const handleTabClick = (tabId: TabItem['id']) => {
     if (tabId !== selectedTabId) {
       setSelectedTabId(tabId);

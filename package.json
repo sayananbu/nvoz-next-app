@@ -15,7 +15,6 @@
   ],
   "dependencies": {
     "@diplodoc/transform": "^4.11.0",
-    "@gravity-ui/page-constructor": "^5.7.1",
     "framer-motion": "^11.0.28",
     "lottie-react": "^2.4.0",
     "next": "14.1.4",
@@ -25,6 +24,7 @@
     "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
+    "@bem-react/classname": "^1.6.0",
     "@gravity-ui/browserslist-config": "^4.3.0",
     "@gravity-ui/components": "^3.3.0",
     "@gravity-ui/eslint-config": "^3.1.1",
