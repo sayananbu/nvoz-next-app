@@ -9,6 +9,7 @@ import { TypeAnimation } from 'react-type-animation';
 import AnimatedArrow from '~shared/animated-arrow';
 import BlockHeader from '~shared/block-header';
 import StepperBlock from '~shared/stepper-block';
+import OurServices from '~widgets/our-services';
 
 import { advantages, typingText } from '../model/data';
 
@@ -27,7 +28,7 @@ const LandingPage: FC = () => {
     <>
       <div className={cx()}>
         <Flex as="header" direction="column" className={cx('header')}>
-          <div className={cx('about')}>
+          <article className={cx('about')}>
             <Text as="h2" variant="display-2">
               1-ая риэлторская компания
             </Text>
@@ -42,7 +43,7 @@ const LandingPage: FC = () => {
             <Button size="xl" view="action" className={cx('action-button')}>
               Оставить заявку
             </Button>
-          </div>
+          </article>
           <AnimatedArrow
             startTimeout={TIMEOUT_REPEAT}
             endTimeout={TIMEOUT_HOLD}
@@ -59,7 +60,7 @@ const LandingPage: FC = () => {
               repeat={Infinity}
             />
           </Text>
-          <Lottie play animationData={houseDealHero} className={cx('hero')} />
+          <Lottie play speed={0.5} animationData={houseDealHero} className={cx('hero')} />
         </Flex>
         <Flex as="section" direction="column" alignItems="flex-end" className={cx('slogan')}>
           <Lottie play animationData={chillAnim} className={cx('slogan__animation')} />
@@ -77,7 +78,10 @@ const LandingPage: FC = () => {
           </Flex>
         </Flex>
         <main className={cx('main')}>
-          <BlockHeader>Наши услуги</BlockHeader>
+          <section>
+            <BlockHeader className={cx('services-header')}>Наши услуги</BlockHeader>
+            <OurServices />
+          </section>
         </main>
       </div>
       <div className={cx('wave')}>

@@ -16,6 +16,7 @@
   "dependencies": {
     "@diplodoc/transform": "^4.11.0",
     "@gravity-ui/page-constructor": "^5.7.1",
+    "framer-motion": "^11.0.28",
     "lottie-react": "^2.4.0",
     "next": "14.1.4",
     "react": "^18",

@@ -7,16 +7,17 @@ import { Flex, Text } from '@gravity-ui/uikit';
 interface BlockHeaderProps {
   children: string;
   subtitle?: string;
+  className?: string;
 }
 
 const DEFAULT_SUBTITLE = 'Новое Время';
 
 const BlockHeader: FC<BlockHeaderProps> = (props) => {
-  const { subtitle = DEFAULT_SUBTITLE, children } = props;
+  const { subtitle = DEFAULT_SUBTITLE, children, className } = props;
   const cx = cn('block-header');
 
   return (
-    <Flex direction="column" gap="1" className={cx()}>
+    <Flex direction="column" gap="1" className={cx('', className)}>
       <Text variant="body-3" color="brand" className={cx('subtitle')}>
         {subtitle}
       </Text>

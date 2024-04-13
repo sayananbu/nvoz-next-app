@@ -93,4 +93,8 @@
       width: 600px;
     }
   }
+
+  &__services-header {
+    margin-bottom: var(--g-spacing-10);
+  }
 }
