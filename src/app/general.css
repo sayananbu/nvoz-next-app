@@ -11,7 +11,11 @@
   --font-weight-bold: 700;
 
   --color-brand-second: #ff8e39;
+
+  --swiper-pagination-color: var(--color-brand-second);
+  --swiper-navigation-color: var(--color-brand-second);
 }
+
 html,
 body {
   position: relative;
@@ -25,4 +29,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-brand-second) !important;
 }

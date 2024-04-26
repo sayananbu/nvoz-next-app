@@ -1,0 +1,12 @@
+.realty {
+  &__slider-container {
+    align-self: center;
+  }
+
+  &__realty-card-slide {
+    display: flex;
+		justify-content: center;
+		background: transparent;
+  }
+
+}

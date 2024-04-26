@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import { Text } from '@gravity-ui/uikit';
+
 import cn from '~shared/utils/cn';
 
 const cx = cn('stepper-block');

@@ -24,7 +24,7 @@
     div {
       display: flex;
       flex-direction: column;
-      gap: var(--g-spacing-1);
+      gap: var(--g-spacing-2);
     }
 
     h1 {
@@ -78,7 +78,7 @@
   &__animated-arrow {
     position: absolute;
     z-index: 80;
-    bottom: 190px;
+    bottom: -75px;
     left: -20px;
     transform: rotate(90deg);
   }
@@ -112,7 +112,13 @@
     }
   }
 
-  &__services-header {
-    margin-bottom: var(--g-spacing-10);
+  &__block-header {
+    margin-bottom: calc(var(--g-spacing-10) * 2);
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--g-spacing-10) * 5);
   }
 }

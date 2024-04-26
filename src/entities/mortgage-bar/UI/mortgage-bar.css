@@ -1,0 +1,11 @@
+.mortgage-bar {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: var(--g-spacing-3);
+
+  &__list {
+    list-style: none;
+    margin-top: var(--g-spacing-4);
+  }
+}

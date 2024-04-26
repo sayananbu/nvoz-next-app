@@ -8,14 +8,15 @@ import Button from '~shared/button';
 import Lottie from '~shared/lottie';
 import StepperBlock from '~shared/stepper-block';
 import TypeAnimation from '~shared/type-animation';
+import cn from '~shared/utils/cn';
 import OurServices from '~widgets/our-services';
+import Realty from '~widgets/realty';
 
 import { advantages, typingText } from '../model/data';
 
 import chillAnim from 'public/assets/chill.json';
 import houseDealHero from 'public/assets/house_deal.json';
 import wavesAnim from 'public/assets/waves.json';
-import cn from '~shared/utils/cn';
 
 const cx = cn('landing-page');
 
@@ -28,7 +29,7 @@ const LandingPage: FC = () => {
     <>
       <div className={cx()}>
         <div className={cx('header')}>
-          <article className={cx('about')}>
+          <header className={cx('about')}>
             <Text as="h2" variant="display-2">
               1-ая риэлторская компания
             </Text>
@@ -36,22 +37,26 @@ const LandingPage: FC = () => {
               <Text as="h1" color="brand" variant="display-4">
                 «Новое Время»
               </Text>
-              <Text as="h4" variant="body-3">
+              <Text as="h5" variant="body-3">
                 г. Орехово-Зуево, ул. Якова Флиера, д. 9
+              </Text>
+              <Text as="h5" variant="header-1">
+                +7 (977) 429-07-29
               </Text>
             </div>
             <Button size="xl" view="action" className={cx('action-button')}>
               Оставить заявку
             </Button>
-          </article>
-          <AnimatedArrow
-            startTimeout={TIMEOUT_REPEAT}
-            endTimeout={TIMEOUT_HOLD}
-            speed={0.5}
-            play
-            loop={false}
-            className={cx('animated-arrow')}
-          />
+            <AnimatedArrow
+              startTimeout={TIMEOUT_REPEAT}
+              endTimeout={TIMEOUT_HOLD}
+              speed={0.5}
+              play
+              loop={false}
+              className={cx('animated-arrow')}
+            />
+          </header>
+
           <Text as="div" variant="display-3" className={cx('animated-text')}>
             <TypeAnimation
               sequence={typingText}
@@ -79,8 +84,16 @@ const LandingPage: FC = () => {
         </section>
         <main className={cx('main')}>
           <section>
-            <BlockHeader className={cx('services-header')}>Наши услуги</BlockHeader>
+            <BlockHeader as="header" className={cx('block-header')}>
+              Наши услуги
+            </BlockHeader>
             <OurServices />
+          </section>
+          <section>
+            <BlockHeader as="header" className={cx('block-header')}>
+              Примеры работ
+            </BlockHeader>
+            <Realty />
           </section>
         </main>
       </div>

@@ -1,7 +1,9 @@
 'use client';
-import { Button as ButtonCore } from '@gravity-ui/uikit';
+import { FC } from 'react';
 
-const Button = (props) => {
+import { Button as ButtonCore, ButtonProps } from '@gravity-ui/uikit';
+
+const Button: FC<ButtonProps> = (props) => {
   return <ButtonCore {...props} />;
 };
 

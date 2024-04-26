@@ -1,9 +1,10 @@
 'use client';
 import React, { FC, useState } from 'react';
 
-import { cn } from '@gravity-ui/page-constructor';
 import { Text } from '@gravity-ui/uikit';
 import { motion } from 'framer-motion';
+
+import cn from '~shared/utils/cn';
 
 import { TabItem } from '../model/types';
 

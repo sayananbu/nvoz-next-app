@@ -1,0 +1,42 @@
+.service-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--g-spacing-3);
+  min-height: 150px;
+
+  &__popup-content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--g-spacing-4);
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--g-spacing-1);
+      margin-top: var(--g-spacing-2);
+      & p {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: auto;
+    margin-bottom: var(--g-spacing-3);
+  }
+
+  &__title {
+    margin-bottom: var(--g-spacing-2);
+    font-weight: 400;
+  }
+
+  &__link {
+    width: 100%;
+
+    &_hidden {
+      opacity: 0;
+      touch-action: none;
+    }
+  }
+}
