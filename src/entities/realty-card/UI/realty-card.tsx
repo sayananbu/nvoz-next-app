@@ -24,6 +24,7 @@ const RealtyCard: FC<RealtyObject> = (props) => {
         <Swiper
           slidesPerView={1}
           loop={true}
+          nested={true}
           pagination={{
             clickable: true,
           }}

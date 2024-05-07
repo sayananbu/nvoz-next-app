@@ -1,16 +1,25 @@
 'use client';
 
+import { useState } from 'react';
+
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+
+import MortgageBar from '~entities/mortgage-bar';
+import ServiceBar from '~entities/service-bar';
+import BlockHeader from '~shared/block-header';
+import Button from '~shared/button';
+import Lottie from '~shared/lottie';
 import TabsSwitcher from '~shared/tabs-switcher';
 import cn from '~shared/utils/cn';
+import CostBenefits from '~widgets/cost-benefits';
 
-import { tabsItems } from '../model/tabs-items';
-import ServiceBar from '~entities/service-bar';
-import { useState } from 'react';
 import { services } from '../model/services';
-import MortgageBar from '~entities/mortgage-bar';
-import Button from '~shared/button';
+
+import servicesAnim from 'public/assets/services.json';
 
 const cx = cn('our-services');
+
+const tabsItems = Object.keys(services).map((key) => ({ id: key, title: key }));
 
 const OurServices = () => {
   const initTab = Object.keys(services)[0];
@@ -22,24 +31,50 @@ const OurServices = () => {
         <TabsSwitcher items={tabsItems} initTabId={initTab} onTabChange={setActiveTab} />
       </div>
       <div className={cx('container')}>
-        {!isMortgageTab && (
-          <div className={cx('list')}>
-            {services[activeTab].map((service) => (
-              <ServiceBar key={activeTab + service.title} service={service} />
-            ))}
-          </div>
-        )}
-        {isMortgageTab && (
-          <div className={cx('mortgage')}>
-            {services[activeTab].map(({ title, list }) => (
-              <MortgageBar key={activeTab + title} title={title} list={list} />
-            ))}
-            <Button view="action" size="xl" className={cx('mortgage__action-button')}>
-              Получить бесплатную консультацию
-            </Button>
-          </div>
-        )}
+        <div className={cx('list')}>
+          <LayoutGroup>
+            <AnimatePresence mode="wait">
+              {services[activeTab].map((service, i, arr) => (
+                <motion.div
+                  key={activeTab + service.title + i}
+                  exit={{
+                    x: arr.length * 10 - 10 * (i + 1),
+                    opacity: 0,
+                  }}
+                  initial={{
+                    x: -10 * (i + 1),
+                    opacity: 0,
+                  }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: (i + 1) / 30 }}
+                >
+                  {isMortgageTab ? (
+                    <MortgageBar
+                      key={activeTab + service.title}
+                      title={service.title}
+                      list={service.list}
+                    />
+                  ) : (
+                    <ServiceBar service={service} />
+                  )}
+                </motion.div>
+              ))}
+            </AnimatePresence>
+            <motion.div layoutId="action-button">
+              <Button view="action" size="xl" className={cx('action-button')}>
+                {isMortgageTab ? 'Получить бесплатную консультацию' : 'Оставить заявку'}
+              </Button>
+            </motion.div>
+          </LayoutGroup>
+        </div>
       </div>
+      <article className={cx('benefits')}>
+        <BlockHeader as="header" subtitle="" className={cx('block-header')}>
+          Что входит в стоимость услуг?
+        </BlockHeader>
+        <CostBenefits />
+      </article>
+      <Lottie play animationData={servicesAnim} className={cx('services-animation')} />
     </div>
   );
 };

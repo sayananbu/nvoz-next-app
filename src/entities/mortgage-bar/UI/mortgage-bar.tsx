@@ -1,5 +1,7 @@
-import { Card, Text, ThemeProvider, Tooltip } from '@gravity-ui/uikit';
 import React, { FC } from 'react';
+
+import { Card, Text, ThemeProvider, Tooltip } from '@gravity-ui/uikit';
+
 import cn from '~shared/utils/cn';
 
 const cx = cn('mortgage-bar');
@@ -13,7 +15,7 @@ const MortgageBar: FC<MortgageBarProps> = (props) => {
   const { title, list } = props;
   return (
     <ThemeProvider theme="dark">
-      <Card className={cx()}  view="filled">
+      <Card className={cx()} view="filled">
         <Text variant="header-2">{title}</Text>
         <ul className={cx('list')}>
           {list.map((item, i) => {

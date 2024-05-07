@@ -4,12 +4,18 @@ import { FC, ReactNode, useEffect, useRef } from 'react';
 import { register } from 'swiper/element/bundle';
 import { SwiperOptions } from 'swiper/types';
 
-type SwiperProps = SwiperOptions & { children: ReactNode };
+type SwiperProps = SwiperOptions & { children: ReactNode } & { targetRef?: { current: any } };
 
 export const Swiper: FC<SwiperProps> = (props) => {
-  const { children, ...rest } = props;
+  const { children, targetRef, ...rest } = props;
 
   const swiperRef = useRef(null);
+
+  const handleSetSwiperInstance = () => {
+    if (targetRef) {
+      targetRef.current = swiperRef.current;
+    }
+  };
 
   useEffect(() => {
     register();
@@ -20,6 +26,7 @@ export const Swiper: FC<SwiperProps> = (props) => {
     Object.assign(swiperRef.current, params);
 
     swiperRef.current.initialize();
+    handleSetSwiperInstance();
   }, []);
 
   return (

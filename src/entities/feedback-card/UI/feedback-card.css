@@ -1,0 +1,45 @@
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--g-spacing-4);
+  gap: var(--g-spacing-5);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: var(--g-spacing-5);
+  }
+
+  &__dot {
+    background: var(--color-brand-second);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    gap: var(--g-spacing-2);
+    align-items: center;
+  }
+
+  &__icon {
+    user-select: none;
+    border-radius: 50%;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: var(--font-weight-normal);
+    text-align: right;
+    width: auto;
+  }
+
+  &__link {
+    font-weight: var(--font-weight-normal);
+  }
+}

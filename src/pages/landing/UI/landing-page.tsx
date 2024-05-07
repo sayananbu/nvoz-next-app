@@ -9,8 +9,10 @@ import Lottie from '~shared/lottie';
 import StepperBlock from '~shared/stepper-block';
 import TypeAnimation from '~shared/type-animation';
 import cn from '~shared/utils/cn';
+import Feedbacks from '~widgets/feedbacks';
 import OurServices from '~widgets/our-services';
 import Realty from '~widgets/realty';
+import Team from '~widgets/team';
 
 import { advantages, typingText } from '../model/data';
 
@@ -90,10 +92,16 @@ const LandingPage: FC = () => {
             <OurServices />
           </section>
           <section>
-            <BlockHeader as="header" className={cx('block-header')}>
-              Примеры работ
-            </BlockHeader>
             <Realty />
+          </section>
+          <section>
+            <BlockHeader as="header" className={cx('block-header')}>
+              Команда профессионалов
+            </BlockHeader>
+            <Team />
+          </section>
+          <section>
+            <Feedbacks />
           </section>
         </main>
       </div>

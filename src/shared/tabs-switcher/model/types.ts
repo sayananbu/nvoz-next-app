@@ -1,4 +1,4 @@
 export interface TabItem {
-  id: number | string;
+  id: string;
   title: string;
 }

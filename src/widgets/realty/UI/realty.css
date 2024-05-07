@@ -5,8 +5,15 @@
 
   &__realty-card-slide {
     display: flex;
-		justify-content: center;
-		background: transparent;
+    justify-content: center;
+    background: transparent;
   }
 
+  &__block-header {
+    display: flex;
+    align-items: flex-end;
+		justify-content: space-between;
+    gap: calc(var(--g-spacing-10) * 2);
+    margin-bottom: calc(var(--g-spacing-10) * 2);
+  }
 }

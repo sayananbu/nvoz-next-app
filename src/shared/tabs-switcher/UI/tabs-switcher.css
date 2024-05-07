@@ -5,6 +5,10 @@
   border-radius: 18px;
   padding: 5px;
 
+  &_alternative {
+    border: none;
+  }
+
   &__tab {
     padding: 0 var(--g-spacing-4);
     cursor: pointer;
@@ -17,12 +21,12 @@
     &__title {
       position: relative;
       z-index: 10;
-			transition: color .3s;
-			font-weight: var(--font-weight-medium);
-			
-			&_active{
-				color: var(--g-color-base-background);
-			}
+      transition: color 0.3s;
+      font-weight: var(--font-weight-medium);
+
+      &_active {
+        color: var(--g-color-base-background);
+      }
     }
 
     &_active {
@@ -33,6 +37,12 @@
       background-color: var(--g-color-base-brand);
       position: absolute;
       left: 0;
+
+			&_alternative{
+				height: 2px;
+				bottom: 0;
+				background-color: var(--color-brand-second);
+			}
     }
   }
 }
