@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { Text } from '@gravity-ui/uikit';
 
+import ContactForm from '~features/contact-form';
 import AnimatedArrow from '~shared/animated-arrow';
 import BlockHeader from '~shared/block-header';
 import Button from '~shared/button';
@@ -10,6 +11,7 @@ import StepperBlock from '~shared/stepper-block';
 import TypeAnimation from '~shared/type-animation';
 import cn from '~shared/utils/cn';
 import Feedbacks from '~widgets/feedbacks';
+import Map from '~widgets/map';
 import OurServices from '~widgets/our-services';
 import Realty from '~widgets/realty';
 import Team from '~widgets/team';
@@ -102,6 +104,15 @@ const LandingPage: FC = () => {
           </section>
           <section>
             <Feedbacks />
+          </section>
+          <section>
+            <BlockHeader as="header" className={cx('block-header')}>
+              Оставить заявку
+            </BlockHeader>
+            <ContactForm />
+          </section>
+          <section>
+            <Map />
           </section>
         </main>
       </div>

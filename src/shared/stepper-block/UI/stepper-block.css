@@ -21,6 +21,18 @@
   }
 
   &__description {
+    color: var(--g-color-base-neutral-light);
+    position: relative;
+
+    &__cover {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: initial;
+    }
+
     &:first-letter {
       text-transform: uppercase;
     }

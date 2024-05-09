@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import MortgageBar from '~entities/mortgage-bar';
 import ServiceBar from '~entities/service-bar';
@@ -24,14 +25,19 @@ const tabsItems = Object.keys(services).map((key) => ({ id: key, title: key }));
 const OurServices = () => {
   const initTab = Object.keys(services)[0];
   const [activeTab, setActiveTab] = useState<string | number>(initTab);
+  const { ref: servicesInViewRef, inView: servicesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
   const isMortgageTab = activeTab === 'Ипотека';
+
   return (
     <div className={cx()}>
       <div className={cx('tabs')}>
         <TabsSwitcher items={tabsItems} initTabId={initTab} onTabChange={setActiveTab} />
       </div>
       <div className={cx('container')}>
-        <div className={cx('list')}>
+        <div className={cx('list')} ref={servicesInViewRef}>
           <LayoutGroup>
             <AnimatePresence mode="wait">
               {services[activeTab].map((service, i, arr) => (
@@ -45,7 +51,7 @@ const OurServices = () => {
                     x: -10 * (i + 1),
                     opacity: 0,
                   }}
-                  animate={{ x: 0, opacity: 1 }}
+                  animate={servicesInView && { x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: (i + 1) / 30 }}
                 >
                   {isMortgageTab ? (

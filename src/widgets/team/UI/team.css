@@ -1,3 +1,6 @@
 .team{
 	
+	&__animation{
+		width: 500px;
+	}
 }

@@ -1,6 +1,8 @@
 'use client';
 import React, { useRef } from 'react';
 
+import { Link, Text } from '@gravity-ui/uikit';
+
 import FeedbackCard from '~entities/feedback-card';
 import BlockHeader from '~shared/block-header';
 import SliderControls from '~shared/slider-controls';
@@ -48,6 +50,12 @@ const Feedbacks = () => {
             ))}
           </Swiper>
         </div>
+        <Text as="p" variant="header-2" className={cx('link')}>
+          Эти и другие отзывы также можно посмотреть на{' '}
+          <Link target="_blank" href="https://yandex.ru/maps/-/CDbBQUmi">
+            Яндекс Картах
+          </Link>
+        </Text>
       </div>
     </>
   );

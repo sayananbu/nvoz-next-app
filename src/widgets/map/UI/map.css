@@ -1,0 +1,9 @@
+.map {
+  width: 100%;
+  border-radius: var(--g-spacing-3);
+
+  & iframe {
+    width: 100%;
+    height: 500px;
+  }
+}

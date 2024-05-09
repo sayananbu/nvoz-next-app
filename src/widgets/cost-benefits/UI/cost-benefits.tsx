@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react';
 import { SealCheck } from '@gravity-ui/icons';
 import { Text } from '@gravity-ui/uikit';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 import TabsSwitcher from '~shared/tabs-switcher';
 import cn from '~shared/utils/cn';
@@ -15,6 +16,9 @@ const tabs = Object.keys(benefits).map((key) => ({ id: key, title: key }));
 
 const CostBenefits: FC = () => {
   const [additionalActiveTabId, setAdditionalActiveTabId] = useState(tabs[0].id);
+  const { ref: benefitsInViewRef, inView: benefitsInView } = useInView({
+    threshold: 0.3,
+  });
 
   return (
     <div className={cx()}>
@@ -22,6 +26,7 @@ const CostBenefits: FC = () => {
         <TabsSwitcher items={tabs} alternative={true} onTabChange={setAdditionalActiveTabId} />
       </div>
       <motion.ul
+        ref={benefitsInViewRef}
         className={cx('content')}
         transition={{
           staggerChildren: 1,
@@ -40,10 +45,12 @@ const CostBenefits: FC = () => {
                 y: 10,
                 opacity: 0,
               }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
+              animate={
+                benefitsInView && {
+                  y: 0,
+                  opacity: 1,
+                }
+              }
               transition={{ duration: 0.3, delay: (i + 1) / 30 }}
             >
               <SealCheck className={cx('check-icon')} />

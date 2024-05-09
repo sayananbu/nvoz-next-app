@@ -7,11 +7,7 @@
     margin-bottom: calc(var(--g-spacing-10) * 2);
   }
 
-  &__slider-container {
-    height: max-content;
-  }
-
-  &__feedback-card-slide {
-    height: 100%;
+  &__link {
+    margin-top: var(--g-spacing-6);
   }
 }
