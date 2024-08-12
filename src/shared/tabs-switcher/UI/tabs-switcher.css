@@ -41,7 +41,6 @@
 			&_alternative{
 				height: 2px;
 				bottom: 0;
-				background-color: var(--color-brand-second);
 			}
     }
   }

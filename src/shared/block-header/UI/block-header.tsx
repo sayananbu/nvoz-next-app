@@ -12,10 +12,10 @@ interface BlockHeaderProps {
 }
 
 const DEFAULT_SUBTITLE = 'Новое Время';
+const cx = cn('block-header');
 
 const BlockHeader: FC<BlockHeaderProps> = (props) => {
   const { subtitle = DEFAULT_SUBTITLE, children, className, as: Comp = 'div' } = props;
-  const cx = cn('block-header');
 
   return (
     <Comp className={cx('', className)}>

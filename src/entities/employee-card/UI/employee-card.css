@@ -1,3 +1,67 @@
-.employee-card{
-	
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  width: 100%;
+
+  &__photo {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: var(--g-spacing-6);
+    overflow: hidden;
+  }
+
+  &__info {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background: var(--g-color-base-generic);
+    padding: calc(var(--g-spacing-5) * 2) var(--g-spacing-3);
+    text-align: center;
+    border-radius: var(--g-spacing-6);
+  }
+
+  &__experience {
+    position: absolute;
+    top: -26px;
+    margin: 0 auto;
+    padding: var(--g-spacing-3) var(--g-spacing-5);
+    background-color: var(--g-color-base-brand-hover);
+    color: var(--g-color-text-dark-primary);
+    border-radius: var(--g-spacing-10);
+  }
+
+  &__position {
+    font-weight: normal;
+  }
+
+  &__gap {
+    position: relative;
+    width: 10px;
+    background-color: var(--g-color-base-brand);
+    border-radius: var(--g-spacing-3);
+    height: 10px;
+    margin: var(--g-spacing-4) 0px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      background-color: var(--g-color-base-brand);
+      border-radius: var(--g-spacing-3);
+      height: 10px;
+      left: -30px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      background-color: var(--g-color-base-brand);
+      border-radius: var(--g-spacing-3);
+      height: 10px;
+      right: -30px;
+    }
+  }
 }

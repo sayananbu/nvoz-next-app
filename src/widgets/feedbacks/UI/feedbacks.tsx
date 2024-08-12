@@ -3,13 +3,15 @@ import React, { useRef } from 'react';
 
 import { Link, Text } from '@gravity-ui/uikit';
 
-import FeedbackCard from '~entities/feedback-card';
 import BlockHeader from '~shared/block-header';
 import SliderControls from '~shared/slider-controls';
 import { Swiper, SwiperSlide } from '~shared/swiper';
 import cn from '~shared/utils/cn';
 
 import { feedbacks } from '../model/feedbacks';
+import dynamic from 'next/dynamic';
+
+const FeedbackCard = dynamic(() => import('~entities/feedback-card'), { ssr: false });
 
 const cx = cn('feedbacks');
 

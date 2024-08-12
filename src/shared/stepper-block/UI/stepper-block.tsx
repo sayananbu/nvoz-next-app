@@ -21,11 +21,11 @@ const StepperBlock: FC<StepperBlockProps> = (props) => {
   return (
     <div className={cx()} ref={inViewRef}>
       <div className={cx('text')}>
-        <Text as="h6" variant="header-1" className={cx('title')}>
+        <Text as="h6" variant='display-1' className={cx('title')}>
           {title}
         </Text>
         {description && (
-          <Text as="p" variant="body-2" className={cx('description')}>
+          <Text as="p" variant="body-3" className={cx('description')}>
             <motion.span
               className={cx('description__cover')}
               initial={{ height: 0 }}

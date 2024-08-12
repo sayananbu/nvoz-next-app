@@ -1,3 +1,40 @@
-.contact-form{
-	
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-radius: var(--g-spacing-2);
+
+  &__undercover {
+    padding: var(--g-spacing-4);
+    border-color: var(--g-color-text-primary);
+		display: flex;
+		flex-direction: column;
+		gap: var(--g-spacing-2);
+  }
+
+  &__input {
+    margin-top: var(--g-spacing-3);
+
+    & .g-text-input__content,
+    & .g-text-area__content {
+      transition: border-color 0.2s;
+      border-color: var(--g-color-text-primary);
+      &:hover,
+      &:focus-within {
+        border-color: var(--g-color-base-brand);
+      }
+      color: white;
+    }
+    /* & input::placeholder {
+      color: white;
+    } */
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+
+  &__submit {
+    margin-top: var(--g-spacing-8);
+  }
 }

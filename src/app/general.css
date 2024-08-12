@@ -31,6 +31,12 @@ body {
   align-items: center;
 }
 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-brand-second);
+  border-radius: var(--g-spacing-4);
+  box-shadow: inset 0px 0px 0px 10px var(--color-brand-second);
+}
+
 .swiper-pagination-bullet-active {
   background: var(--color-brand-second) !important;
 }

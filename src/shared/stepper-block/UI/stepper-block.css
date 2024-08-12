@@ -7,21 +7,21 @@
   &:nth-child(even) {
     justify-content: flex-end;
     .stepper-block__text {
-      padding-left: var(--g-spacing-5);
+      padding-left: calc(3.5 * var(--g-spacing-10));
       padding-right: 0;
       text-align: left;
     }
   }
 
   &__text {
-    width: 50%;
-    padding-right: var(--g-spacing-5);
+    width: 65%;
+    padding-right: calc(3.5 * var(--g-spacing-10));
     box-sizing: border-box;
     text-align: right;
   }
 
   &__description {
-    color: var(--g-color-base-neutral-light);
+    color: transparent;
     position: relative;
 
     &__cover {
@@ -30,7 +30,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      color: initial;
+      color: var(--g-color-text-primary);
     }
 
     &:first-letter {

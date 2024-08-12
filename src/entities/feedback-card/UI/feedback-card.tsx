@@ -16,7 +16,7 @@ const FeedbackCard: FC<Feedback> = (props) => {
   const { name, deal, content, url } = props;
   const { ref: inViewRef, inView } = useInView({ triggerOnce: true });
 
-  const randomColorIndex = Math.floor(Math.random() * (COLORS.length - 1));
+  const randomColorIndex = Math.floor(Math.random() * COLORS.length);
   const iconLetters = name
     .split(' ')
     .map((word) => word[0])

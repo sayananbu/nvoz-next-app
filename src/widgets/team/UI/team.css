@@ -1,6 +1,9 @@
-.team{
-	
-	&__animation{
-		width: 500px;
-	}
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--g-spacing-4);
+
+  &__animation {
+    width: 500px;
+  }
 }

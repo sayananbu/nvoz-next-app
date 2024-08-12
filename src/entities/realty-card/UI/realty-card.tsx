@@ -37,7 +37,9 @@ const RealtyCard: FC<RealtyObject> = (props) => {
                     src={image}
                     alt="Изображение объекта недвижимости"
                     fill={true}
+                    sizes="100%"
                     quality={70}
+                    objectFit="cover"
                   />
                 </div>
               </div>

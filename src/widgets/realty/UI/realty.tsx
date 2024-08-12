@@ -32,7 +32,7 @@ const Realty: FC<RealtyProps> = (props) => {
         <div className={cx('slider-container')}>
           <Swiper
             targetRef={swiperRef}
-            slidesPerView={4}
+            slidesPerView={3}
             grabCursor={true}
             loop={true}
             keyboard={{
