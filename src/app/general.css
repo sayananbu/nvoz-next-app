@@ -1,25 +1,9 @@
-:root {
-  --width-s: 576px;
-  --width-m: 768px;
-  --width-l: 1080px;
-  --width-xl: 1200px;
-  --width-xxl: 1400px;
-  --width-xxxl: 1920px;
+@import './vars.css';
+@import './fonts.css';
 
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-
-  --color-brand-second: #ff8e39;
-
-  --swiper-pagination-color: var(--color-brand-second);
-  --swiper-navigation-color: var(--color-brand-second);
-}
 
 html,
 body {
-  position: relative;
-  overflow: hidden auto;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -29,6 +13,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: SF Pro Display;
+	position: relative;
+  overflow: hidden auto;
+	background-color: var(--color-bg-gray);
 }
 
 body::-webkit-scrollbar-thumb {

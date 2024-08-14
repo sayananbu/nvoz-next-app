@@ -1,0 +1,36 @@
+@import '../../../app/mixins/text-mixin.css';
+
+.text {
+  &_size {
+    &_6xl {
+      @mixin text 60px, 60px;
+    }
+    &_5xl {
+      @mixin text 48px, 48px;
+    }
+    &_4xl {
+      @mixin text 36px, 40px;
+    }
+    &_3xl {
+      @mixin text 30px, 36px;
+    }
+    &_2xl {
+      @mixin text 24px, 32px;
+    }
+    &_xl {
+      @mixin text 20px, 28px;
+    }
+    &_lg {
+      @mixin text 18px, 28px;
+    }
+    &_md {
+      @mixin text 16px, 24px;
+    }
+    &_sm {
+      @mixin text 14px, 20px;
+    }
+    &_xs {
+      @mixin text 12px, 16px;
+    }
+  }
+}

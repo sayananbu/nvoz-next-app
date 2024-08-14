@@ -18,8 +18,8 @@
     user-select: none;
 
     &:hover {
-      border-color: var(--color-brand-second);
-      color: var(--color-brand-second);
+      border-color: var(--color-brand-secondary);
+      color: var(--color-brand-secondary);
     }
 
     &_disabled {

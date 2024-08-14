@@ -1,0 +1,31 @@
+
+@import '../../../app/mixins/text-mixin.css';
+
+.heading {
+  &_size {
+    &_4xl {
+      @mixin text 72px, 100%, bold;
+    }
+    &_3xl {
+      @mixin text 60px, 100%, bold;
+    }
+    &_2xl {
+      @mixin text 48px, 100%, bold;
+    }
+    &_xl {
+      @mixin text 36px, 120%, bold;
+    }
+    &_lg {
+      @mixin text 30px, 120%, bold;
+    }
+    &_md {
+      @mixin text 24px, 120%, bold;
+    }
+    &_sm {
+      @mixin text 20px, 120%, bold;
+    }
+    &_xs {
+      @mixin text 16px, 120%, bold;
+    }
+  }
+}

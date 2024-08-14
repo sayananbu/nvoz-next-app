@@ -1,12 +1,15 @@
 module.exports = {
   plugins: [
     'postcss-flexbugs-fixes',
+    'postcss-mixins',
+    'postcss-import',
+    'postcss-simple-vars',
     'postcss-nested',
     [
       'postcss-preset-env',
       {
         autoprefixer: {
-          flexbox: 'no-2009',
+          grid: false,
         },
         stage: 3,
         features: {

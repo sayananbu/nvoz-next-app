@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 
-import '@gravity-ui/uikit/styles/fonts.css';
-import '@gravity-ui/uikit/styles/styles.css';
 import '~app/general.css';
 import '~app/normalize.css';
 
@@ -22,7 +20,7 @@ export default function RootLayout({
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
       <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
       <link rel="manifest" href="/favicon/site.webmanifest" />
-      <body className="g-root g-root_theme_dark">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

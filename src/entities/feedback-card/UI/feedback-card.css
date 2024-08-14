@@ -11,7 +11,7 @@
   }
 
   &__dot {
-    background: var(--color-brand-second);
+    background: var(--color-brand-secondary);
     width: 8px;
     height: 8px;
     border-radius: 50%;
