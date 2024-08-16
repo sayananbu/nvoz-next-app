@@ -1,7 +1,6 @@
 import React, { ElementType, FC } from 'react';
 
-import { Text } from '@gravity-ui/uikit';
-
+import Text from '~shared/text';
 import cn from '~shared/utils/cn';
 
 interface BlockHeaderProps {
@@ -19,10 +18,8 @@ const BlockHeader: FC<BlockHeaderProps> = (props) => {
 
   return (
     <Comp className={cx('', className)}>
-      <Text variant="body-3" color="brand" className={cx('subtitle')}>
-        {subtitle}
-      </Text>
-      <Text variant="display-2">{children}</Text>
+      <Text className={cx('subtitle')}>{subtitle}</Text>
+      <Text>{children}</Text>
     </Comp>
   );
 };

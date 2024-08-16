@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Text, TextProps } from '@gravity-ui/uikit';
+import Text, { TextProps } from '~shared/text';
 
 interface AmountProps {
   value: number;
@@ -17,7 +17,7 @@ const Amount: FC<AmountProps & TextProps> = (props) => {
   const valueAddon = addon ? `\u00A0${addon}` : '';
 
   return (
-    <Text variant="header-1" className={className} {...rest}>
+    <Text className={className} {...rest}>
       {formattedValue}
       {valueAddon}
     </Text>

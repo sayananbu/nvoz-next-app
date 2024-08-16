@@ -1,6 +1,8 @@
 import React, { ElementType, FC, ReactNode } from 'react';
-import { HeadingSizes, HeadingTags } from '../model/types';
+
 import cn from '~shared/utils/cn';
+
+import { HeadingSizes, HeadingTags } from '../model/types';
 
 interface HeadingProps {
   tag?: HeadingTags;

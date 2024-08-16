@@ -1,12 +1,42 @@
 .button {
   border: none;
-  background-color: red;
   border-radius: 12px;
-  padding: 12px 48px;
-  &_variant {
-    &_solid {
+  box-sizing: border-box;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    color 0.2s;
+  &_size {
+		 &_lg {
+      padding: 14px 36px;
     }
+		 &_md {
+      padding: 10px 24px;
+    }
+		 &_sm {
+      padding: 8px 16px;
+    }
+		 &_xs {
+      padding: 6px 10px;
+    }
+  }
+  &_variant {
     &_outlined {
+      border: 2px solid var(--color-brand-main);
+      background: none;
+      color: var(--color-brand-main);
+    }
+    &_solid {
+      background-color: var(--color-brand-button);
+      color: #000;
+      &:hover {
+        /* background-color: var(--color-brand-secondary); */
+				box-shadow: 0px 0px 10px 1px var(--color-brand-button);
+      }
+      &:active {
+        box-shadow: 0px 0px 10px 1px var(--color-brand-secondary);
+      }
     }
   }
 }

@@ -2,12 +2,13 @@
 import React, { useMemo, useRef } from 'react';
 
 import { Button, Card, TextArea, TextInput } from '@gravity-ui/uikit';
-
-import cn from '~shared/utils/cn';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { validationSchema } from '../model/schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import IMask, { MaskedPattern } from 'imask';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+import cn from '~shared/utils/cn';
+
+import { validationSchema } from '../model/schema';
 
 const cx = cn('contact-form');
 interface FormDataTypes {

@@ -1,10 +1,10 @@
 'use client';
 import React, { FC } from 'react';
 
-import { Text } from '@gravity-ui/uikit';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import Text from '~shared/text';
 import cn from '~shared/utils/cn';
 
 const cx = cn('stepper-block');
@@ -21,11 +21,11 @@ const StepperBlock: FC<StepperBlockProps> = (props) => {
   return (
     <div className={cx()} ref={inViewRef}>
       <div className={cx('text')}>
-        <Text as="h6" variant='display-1' className={cx('title')}>
+        <Text size="4xl" tag="p" weight="bold" className={cx('title')}>
           {title}
         </Text>
         {description && (
-          <Text as="p" variant="body-3" className={cx('description')}>
+          <Text tag="p" size="2xl" className={cx('description')}>
             <motion.span
               className={cx('description__cover')}
               initial={{ height: 0 }}

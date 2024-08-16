@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+
 import Heading from '~shared/heading';
-import cn from '~shared/utils/cn';
 import Text from '~shared/text';
+import cn from '~shared/utils/cn';
 
 const cx = cn('statistic-bar');
 

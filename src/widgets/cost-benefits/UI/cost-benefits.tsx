@@ -1,11 +1,10 @@
 import React, { FC, useState } from 'react';
 
-import { SealCheck } from '@gravity-ui/icons';
-import { Text } from '@gravity-ui/uikit';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import TabsSwitcher from '~shared/tabs-switcher';
+import Text from '~shared/text';
 import cn from '~shared/utils/cn';
 
 import { benefits } from '../model/benefits';
@@ -53,8 +52,7 @@ const CostBenefits: FC = () => {
               }
               transition={{ duration: 0.3, delay: (i + 1) / 30 }}
             >
-              <SealCheck className={cx('check-icon')} />
-              <Text variant="body-3">{item}</Text>
+              <Text>{item}</Text>
             </motion.li>
           ))}
         </AnimatePresence>

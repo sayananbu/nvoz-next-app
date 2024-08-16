@@ -13,7 +13,7 @@
     height: 2px;
     width: 60%;
     border-radius: 20px;
-    background-color: var(--color-brand-secondary);
+    background-color: var(--color-brand-button);
     /* background-color: #cccccc; */
   }
 }

@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from 'react';
 
-import { ArrowToggle, Card } from '@gravity-ui/uikit';
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 
 import cn from '~shared/utils/cn';
@@ -17,10 +16,10 @@ const Accordion: FC<AccordionProps> = (props) => {
   const [isOpen, setIsOpen] = useCycle(false, true);
 
   return (
-    <Card view="filled" className={cx()}>
+    <div className={cx()}>
       <div className={cx('title', { hasContent: Boolean(children) })} onClick={() => setIsOpen()}>
         <div>{title}</div>
-        {children && <ArrowToggle direction={isOpen ? 'bottom' : 'right'} size={30} />}
+        {/* {children && <ArrowToggle direction={isOpen ? 'bottom' : 'right'} size={30} />} */}
       </div>
       <AnimatePresence initial={false}>
         {children && isOpen && (
@@ -39,7 +38,7 @@ const Accordion: FC<AccordionProps> = (props) => {
           </motion.section>
         )}
       </AnimatePresence>
-    </Card>
+    </div>
   );
 };
 

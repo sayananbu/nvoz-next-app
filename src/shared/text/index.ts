@@ -1,2 +1,3 @@
 import './UI/text.css';
-export { default } from './UI/text';
+export { default, TextProps } from './UI/text';
+export * from './model/types';

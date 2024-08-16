@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
-import cn from '~shared/utils/cn';
-import { Employee } from '../model/types';
+
 import { Text } from '@gravity-ui/uikit';
+import Image from 'next/image';
+
+import cn from '~shared/utils/cn';
+
+import { Employee } from '../model/types';
 
 const cx = cn('employee-card');
 

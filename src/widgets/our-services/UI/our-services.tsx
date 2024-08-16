@@ -67,7 +67,7 @@ const OurServices = () => {
               ))}
             </AnimatePresence>
             <motion.div layoutId="action-button">
-              <Button view="action" size="xl" className={cx('action-button')}>
+              <Button size="lg" className={cx('action-button')}>
                 {isMortgageTab ? 'Получить бесплатную консультацию' : 'Оставить заявку'}
               </Button>
             </motion.div>

@@ -1,9 +1,9 @@
 'use client';
 import React, { FC, useEffect, useState } from 'react';
 
-import { Text } from '@gravity-ui/uikit';
 import { motion } from 'framer-motion';
 
+import Text from '~shared/text';
 import cn from '~shared/utils/cn';
 
 import { TabItem } from '../model/types';
@@ -42,8 +42,7 @@ const TabsSwitcher: FC<TabsSwitcherProps> = (props) => {
       {items.map((item) => (
         <div key={item.id} className={cx('tab')} onClick={() => handleTabClick(item.id)}>
           <Text
-            as="p"
-            variant="header-1"
+            tag="p"
             className={cx('tab__title', { active: item.id === selectedTabId && !alternative })}
           >
             {item.title}
