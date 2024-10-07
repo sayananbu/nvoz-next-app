@@ -1,6 +1,6 @@
 .tabs-switcher {
   display: flex;
-  border: 2px solid var(--g-color-text-primary);
+  border: 2px solid var(--color-brand-secondary);
   width: fit-content;
   border-radius: 18px;
   padding: 5px;
@@ -22,10 +22,9 @@
       position: relative;
       z-index: 10;
       transition: color 0.3s;
-      font-weight: var(--font-weight-medium);
 
       &_active {
-        color: var(--g-color-base-background);
+        color: #fff;
       }
     }
 
@@ -34,14 +33,15 @@
       width: 100%;
       border-radius: 10px;
       height: 100%;
-      background-color: var(--g-color-base-brand);
+      color: #fff;
+      background-color: var(--color-brand-main);
       position: absolute;
       left: 0;
 
-			&_alternative{
-				height: 2px;
-				bottom: 0;
-			}
+      &_alternative {
+        height: 2px;
+        bottom: 0;
+      }
     }
   }
 }

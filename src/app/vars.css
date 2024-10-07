@@ -10,22 +10,25 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  --color-brand-button: #ffd13c;
+  --color-brand-action: #ffd13c;
+  --color-brand-action-light: #faa21d7a;
   --color-brand-main: #faa21d;
+  --color-brand-main-light: #ffac6c94;
   --color-brand-secondary: #ff8e39;
-	--color-bg-gray: #F1F3F6;
+  --color-brand-secondary-light: #ff8f3983;
+  --color-bg-gray: #ecece6;
 
   --swiper-pagination-color: var(--color-brand-secondary);
   --swiper-navigation-color: var(--color-brand-secondary);
 
-	--g-spacing-1: 4px;
-	--g-spacing-2: calc(var(--g-spacing-1) * 2);
-	--g-spacing-3: calc(var(--g-spacing-1) * 3);
-	--g-spacing-4: calc(var(--g-spacing-1) * 4);
-	--g-spacing-5: calc(var(--g-spacing-1) * 5);
-	--g-spacing-6: calc(var(--g-spacing-1) * 6);
-	--g-spacing-7: calc(var(--g-spacing-1) * 7);
-	--g-spacing-8: calc(var(--g-spacing-1) * 8);
-	--g-spacing-9: calc(var(--g-spacing-1) * 9);
-	--g-spacing-10: calc(var(--g-spacing-1) * 10);
+  --g-spacing-1: 4px;
+  --g-spacing-2: calc(var(--g-spacing-1) * 2);
+  --g-spacing-3: calc(var(--g-spacing-1) * 3);
+  --g-spacing-4: calc(var(--g-spacing-1) * 4);
+  --g-spacing-5: calc(var(--g-spacing-1) * 5);
+  --g-spacing-6: calc(var(--g-spacing-1) * 6);
+  --g-spacing-7: calc(var(--g-spacing-1) * 7);
+  --g-spacing-8: calc(var(--g-spacing-1) * 8);
+  --g-spacing-9: calc(var(--g-spacing-1) * 9);
+  --g-spacing-10: calc(var(--g-spacing-1) * 10);
 }

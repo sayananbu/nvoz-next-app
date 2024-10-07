@@ -1,29 +1,31 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import TabsSwitcher from '~shared/tabs-switcher';
 import Text from '~shared/text';
 import cn from '~shared/utils/cn';
 
-import { benefits } from '../model/benefits';
+const cx = cn('benefits-bar');
 
-const cx = cn('cost-benefits');
+interface BenefitsBarProps {
+  benefits: { type: string; content: string[] };
+  label: string;
+  order?: number;
+}
 
-const tabs = Object.keys(benefits).map((key) => ({ id: key, title: key }));
+const BenefitsBar: FC<BenefitsBarProps> = (props) => {
+  const { benefits, label, order = 0 } = props;
 
-const CostBenefits: FC = () => {
-  const [additionalActiveTabId, setAdditionalActiveTabId] = useState(tabs[0].id);
   const { ref: benefitsInViewRef, inView: benefitsInView } = useInView({
     threshold: 0.3,
   });
 
   return (
     <div className={cx()}>
-      <div className={cx('tabs')}>
-        <TabsSwitcher items={tabs} alternative={true} onTabChange={setAdditionalActiveTabId} />
-      </div>
+      <Text tag="p" size="3xl" weight="bold" className={cx('label')}>
+        {label}
+      </Text>
       <motion.ul
         ref={benefitsInViewRef}
         className={cx('content')}
@@ -32,7 +34,7 @@ const CostBenefits: FC = () => {
         }}
       >
         <AnimatePresence mode="wait">
-          {benefits[additionalActiveTabId].content.map((item, i) => (
+          {benefits.content.map((item, i) => (
             <motion.li
               key={item + i}
               className={cx('list-item')}
@@ -50,7 +52,7 @@ const CostBenefits: FC = () => {
                   opacity: 1,
                 }
               }
-              transition={{ duration: 0.3, delay: (i + 1) / 30 }}
+              transition={{ duration: 0.3, delay: (i + 1 + order * 8) / 15 }}
             >
               <Text>{item}</Text>
             </motion.li>
@@ -61,4 +63,4 @@ const CostBenefits: FC = () => {
   );
 };
 
-export default CostBenefits;
+export default BenefitsBar;

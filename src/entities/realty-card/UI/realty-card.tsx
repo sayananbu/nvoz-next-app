@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 
-import { Card, Text } from '@gravity-ui/uikit';
 import Image from 'next/image';
 
 import Amount from '~shared/amount';
 import { Swiper, SwiperSlide } from '~shared/swiper';
+import Text from '~shared/text';
 import cn from '~shared/utils/cn';
 import { RealtyObject, RealtyType } from '~widgets/realty';
 
@@ -19,7 +19,7 @@ const RealtyCard: FC<RealtyObject> = (props) => {
   const formatFloor = isFlat ? `${floor}/${floorTotal} эт.` : `${floorTotal} эт.`;
 
   return (
-    <Card className={cx()} view="filled" theme="warning">
+    <div className={cx()}>
       <div className={cx('slider-container')}>
         <Swiper
           slidesPerView={1}
@@ -49,20 +49,20 @@ const RealtyCard: FC<RealtyObject> = (props) => {
       </div>
 
       <div className={cx('cost')}>
-        <Amount value={cost} addon="₽" />
+        <Amount value={cost} weight="bold" size="2xl" addon="₽" />
       </div>
       <div>
-        <Amount value={costPerMeter} addon="₽/м²" variant="body-2" color="secondary" />
+        <Amount value={costPerMeter} addon="₽/м²" />
       </div>
       <div className={cx('details')}>
-        <Text variant="body-3">{formatRooms}</Text>
-        <Text variant="body-3">{`${area} м²`}</Text>
-        <Text variant="body-3">{formatFloor}</Text>
+        <Text>{formatRooms}</Text>
+        <Text>{`${area} м²`}</Text>
+        <Text>{formatFloor}</Text>
       </div>
       <div>
-        <Text color="secondary">{address}</Text>
+        <Text size="md">{address}</Text>
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -1,0 +1,46 @@
+.benefits-bar {
+  box-shadow: 0px 0px 10px 0px var(--color-brand-secondary);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--g-spacing-3);
+	color: #000000;
+  flex: 1;
+
+  &:nth-child(1) {
+    background-color: #ff8f3983;
+  }
+  &:nth-child(2) {
+		background-color: #faa21d7a;
+  }
+  &:nth-child(3) {
+    background-color: #ffac6c94;
+  }
+
+  &__label {
+    align-self: center;
+  }
+
+  &__check-icon {
+    min-width: 30px;
+    min-height: 30px;
+    color: #1dc929;
+    margin-right: var(--g-spacing-3);
+  }
+
+  &__content {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-spacing-2);
+    margin-top: var(--g-spacing-6);
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    border-radius: var(--g-spacing-3);
+    padding: var(--g-spacing-2) var(--g-spacing-3);
+  }
+}

@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import BenefitsBar from '~entities/benefits-bar';
+import { benefits } from '~entities/benefits-bar/model/benefits';
 import MortgageBar from '~entities/mortgage-bar';
 import ServiceBar from '~entities/service-bar';
 import BlockHeader from '~shared/block-header';
@@ -12,15 +14,15 @@ import Button from '~shared/button';
 import Lottie from '~shared/lottie';
 import TabsSwitcher from '~shared/tabs-switcher';
 import cn from '~shared/utils/cn';
-import CostBenefits from '~widgets/cost-benefits';
 
 import { services } from '../model/services';
 
-import servicesAnim from 'public/assets/services.json';
+import chillAnim from 'public/assets/chill.json';
 
 const cx = cn('our-services');
 
 const tabsItems = Object.keys(services).map((key) => ({ id: key, title: key }));
+const benefitsKeys = Object.keys(benefits);
 
 const OurServices = () => {
   const initTab = Object.keys(services)[0];
@@ -73,14 +75,18 @@ const OurServices = () => {
             </motion.div>
           </LayoutGroup>
         </div>
+        <Lottie play animationData={chillAnim} className={cx('services-animation')} />
       </div>
       <article className={cx('benefits')}>
         <BlockHeader as="header" subtitle="" className={cx('block-header')}>
           Что входит в стоимость услуг?
         </BlockHeader>
-        <CostBenefits />
+        <div className={cx('benefits__container')}>
+          {benefitsKeys.map((key, i) => (
+            <BenefitsBar key={key} label={key} order={i} benefits={benefits[key]} />
+          ))}
+        </div>
       </article>
-      <Lottie play animationData={servicesAnim} className={cx('services-animation')} />
     </div>
   );
 };

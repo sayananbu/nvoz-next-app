@@ -4,28 +4,28 @@
 .heading {
   &_size {
     &_4xl {
-      @mixin text 72px, 100%, bold;
+      @mixin heading4XL;
     }
     &_3xl {
-      @mixin text 60px, 100%, bold;
+      @mixin heading3XL;
     }
     &_2xl {
-      @mixin text 48px, 100%, bold;
+      @mixin heading2XL;
     }
     &_xl {
-      @mixin text 36px, 120%, bold;
+      @mixin headingXL;
     }
     &_lg {
-      @mixin text 30px, 120%, bold;
+      @mixin headingLG;
     }
     &_md {
-      @mixin text 24px, 120%, bold;
+      @mixin headingMD;
     }
     &_sm {
-      @mixin text 20px, 120%, bold;
+      @mixin headingSM;
     }
     &_xs {
-      @mixin text 16px, 120%, bold;
+      @mixin headingXS;
     }
   }
 }

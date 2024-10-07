@@ -43,6 +43,8 @@ const TabsSwitcher: FC<TabsSwitcherProps> = (props) => {
         <div key={item.id} className={cx('tab')} onClick={() => handleTabClick(item.id)}>
           <Text
             tag="p"
+            size="2xl"
+            weight="medium"
             className={cx('tab__title', { active: item.id === selectedTabId && !alternative })}
           >
             {item.title}

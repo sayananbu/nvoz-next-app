@@ -26,13 +26,17 @@ const ServiceBar: FC<ServiceBarProps> = (props) => {
     <Accordion
       title={
         <>
-          <Text className={cx('title')}>{title} </Text>
+          <Text className={cx('title')} size="2xl">
+            {title}
+          </Text>
           {isPriceNum ? (
-            <Text tag="p" className={cx('price')}>
-              от <Amount variant="header-2" value={price} addon="₽" />
+            <Text tag="p" className={cx('price')} size="xl" weight="bold">
+              от <Amount size="2xl" weight="bold" value={price} addon="₽" />
             </Text>
           ) : (
-            <Text className={cx('price')}>{price}</Text>
+            <Text className={cx('price')} size="2xl" tag="p" weight="bold">
+              {price}
+            </Text>
           )}
         </>
       }

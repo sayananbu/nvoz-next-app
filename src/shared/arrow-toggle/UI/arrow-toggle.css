@@ -1,0 +1,15 @@
+.arrow-toggle {
+  transition: transform 0.3s;
+
+  &_direction {
+    &_right {
+      transform: rotate(-90deg);
+    }
+    &_top {
+      transform: rotate(-180deg);
+    }
+    &_left {
+      transform: rotate(90deg);
+    }
+  }
+}

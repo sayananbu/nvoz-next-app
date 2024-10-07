@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import { ArrowToggle } from '@gravity-ui/uikit';
-
+import ArrowToggle from '~shared/arrow-toggle';
 import cn from '~shared/utils/cn';
 
 const cx = cn('slider-controls');
@@ -28,7 +27,8 @@ const SliderControls: FC<SliderControlsProps> = (props) => {
   };
   useEffect(() => {
     swiper.current?.swiper.on('slideChange', handleDisableControl);
-  }, []);
+  }, [swiper]);
+
   return (
     <div className={cx('', className)}>
       <div

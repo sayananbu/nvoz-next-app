@@ -1,7 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 
+import ArrowToggle from '~shared/arrow-toggle';
 import cn from '~shared/utils/cn';
 
 const cx = cn('accordion');
@@ -15,11 +16,17 @@ const Accordion: FC<AccordionProps> = (props) => {
 
   const [isOpen, setIsOpen] = useCycle(false, true);
 
+  const handleToggle = () => {
+    if (children) {
+      setIsOpen();
+    }
+  };
+
   return (
     <div className={cx()}>
-      <div className={cx('title', { hasContent: Boolean(children) })} onClick={() => setIsOpen()}>
+      <div className={cx('title', { hasContent: Boolean(children) })} onClick={handleToggle}>
         <div>{title}</div>
-        {/* {children && <ArrowToggle direction={isOpen ? 'bottom' : 'right'} size={30} />} */}
+        {children && <ArrowToggle direction={isOpen ? 'bottom' : 'right'} size={30} />}
       </div>
       <AnimatePresence initial={false}>
         {children && isOpen && (

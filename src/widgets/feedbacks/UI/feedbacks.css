@@ -3,11 +3,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: calc(var(--g-spacing-10) * 2);
-    margin-bottom: calc(var(--g-spacing-10) * 2);
+    gap: var(--g-spacing-10);
+    margin-bottom: var(--g-spacing-10);
   }
-
+  &__referer {
+    margin-bottom: var(--g-spacing-6);
+  }
   &__link {
-    margin-top: var(--g-spacing-6);
+    color: var(--color-brand-secondary);
   }
 }

@@ -10,7 +10,8 @@
   }
 
   &__container {
-    min-height: 450px;
+    min-height: 500px;
+		position: relative;
   }
 
   &__list {
@@ -28,13 +29,18 @@
 
   &__benefits {
     margin-top: calc(var(--g-spacing-10) * 2.5);
+
+		&__container{
+			display: flex;
+			gap: var(--g-spacing-4);
+		}
   }
 
   &__services-animation {
     position: absolute;
-    right: -350px;
-    top: 100px;
-    width: 1100px;
+    top: -60px;
+    right: -30px;
+    width: 650px;
     z-index: -10;
   }
 

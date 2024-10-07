@@ -7,7 +7,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,13 +24,7 @@
 
     &_disabled {
       pointer-events: none;
-      border-color: var(--g-color-base-neutral-light);
-      color: var(--g-color-base-neutral-light);
-
-      &:hover {
-        border-color: var(--g-color-base-neutral-light);
-        color: var(--g-color-base-neutral-light);
-      }
+      opacity: 0.2;
     }
   }
 }

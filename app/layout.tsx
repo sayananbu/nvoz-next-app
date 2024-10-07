@@ -4,7 +4,7 @@ import '~app/general.css';
 import '~app/normalize.css';
 
 export const metadata: Metadata = {
-  title: '«Новое Время» 1-ая риэлторская компания | Орехово-Зуево',
+  title: '«Новое Время» 1-ая риэлторская компания',
   description: 'Новое время — новые возможности',
 };
 

@@ -3,6 +3,8 @@
   flex-direction: column;
   padding: var(--g-spacing-4);
   gap: var(--g-spacing-5);
+  background-color: var(--color-brand-main-light);
+  border-radius: 8px;
 
   &__header {
     display: flex;
@@ -31,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
   }
 
   &__name {
@@ -41,11 +44,13 @@
 
   &__link {
     font-weight: var(--font-weight-normal);
+    color: var(--color-brand-secondary);
+    text-decoration: none;
   }
 
   &__content {
     position: relative;
-    color: var(--g-color-base-neutral-light);
+    color: transparent;
 
     &__cover {
       position: absolute;
@@ -53,7 +58,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      color: var(--g-color-text-complementary);
+      color: #000;
       clip-path: inset(0 0 100% 0);
       transition: clip-path 2s;
 

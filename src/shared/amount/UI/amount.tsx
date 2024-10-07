@@ -8,7 +8,7 @@ interface AmountProps {
   className?: string;
 }
 
-const Amount: FC<AmountProps & TextProps> = (props) => {
+const Amount: FC<AmountProps & Omit<TextProps, 'children'>> = (props) => {
   const { value, className, addon, ...rest } = props;
 
   const formattedValue = new Intl.NumberFormat('ru-RU', {

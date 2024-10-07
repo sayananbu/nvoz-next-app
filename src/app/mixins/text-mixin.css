@@ -3,3 +3,62 @@
   line-height: $height;
   font-weight: $weight;
 }
+
+/* Heading mixins */
+@define-mixin heading4XL  {
+  @mixin text 72px, 100%, bold;
+}
+@define-mixin heading3XL  {
+  @mixin text 60px, 100%, bold;
+}
+@define-mixin heading2XL  {
+  @mixin text 48px, 100%, bold;
+}
+@define-mixin headingXL  {
+  @mixin text 36px, 120%, bold;
+}
+@define-mixin headingLG  {
+  @mixin text 30px, 120%, bold;
+}
+@define-mixin headingMD  {
+  @mixin text 24px, 120%, bold;
+}
+@define-mixin headingSM  {
+  @mixin text 20px, 120%, bold;
+}
+@define-mixin headingXS  {
+  @mixin text 16px, 120%, bold;
+}
+
+/* Text mixins */
+@define-mixin text6XL  {
+  @mixin text 60px, 60px;
+}
+@define-mixin text5XL  {
+  @mixin text 48px, 48px;
+}
+@define-mixin text4XL  {
+  @mixin text 36px, 40px;
+}
+@define-mixin text3XL  {
+  @mixin text 30px, 36px;
+}
+@define-mixin text2XL  {
+  @mixin text 24px, 32px;
+}
+@define-mixin textXL  {
+  @mixin text 20px, 28px;
+}
+@define-mixin textLG  {
+  @mixin text 18px, 28px;
+}
+@define-mixin textMD  {
+  @mixin text 16px, 24px;
+}
+@define-mixin textSM  {
+  @mixin text 14px, 20px;
+}
+@define-mixin textXS  {
+  @mixin text 12px, 16px;
+}
+

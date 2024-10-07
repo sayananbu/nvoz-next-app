@@ -13,10 +13,16 @@ const MortgageBar: FC<MortgageBarProps> = (props) => {
   const { title, list } = props;
   return (
     <div className={cx()}>
-      <Text>{title}</Text>
+      <Text size="2xl" tag="p">
+        {title}
+      </Text>
       <ul className={cx('list')}>
         {list.map((item, i) => {
-          return <Text key={item + i}>{item}</Text>;
+          return (
+            <Text tag="p" key={item + i}>
+              {item}
+            </Text>
+          );
         })}
       </ul>
     </div>

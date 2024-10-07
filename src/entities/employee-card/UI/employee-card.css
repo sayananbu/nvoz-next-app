@@ -12,6 +12,14 @@
     overflow: hidden;
   }
 
+  &__name {
+    min-height: 72px;
+    vertical-align: middle;
+  }
+
+  &__name-separator {
+  }
+
   &__info {
     display: flex;
     position: relative;
@@ -28,8 +36,8 @@
     top: -26px;
     margin: 0 auto;
     padding: var(--g-spacing-3) var(--g-spacing-5);
-    background-color: var(--g-color-base-brand-hover);
-    color: var(--g-color-text-dark-primary);
+    background-color: var(--color-brand-main);
+    color: #ffffff;
     border-radius: var(--g-spacing-10);
   }
 
@@ -40,7 +48,7 @@
   &__gap {
     position: relative;
     width: 10px;
-    background-color: var(--g-color-base-brand);
+    background-color: var(--color-brand-main);
     border-radius: var(--g-spacing-3);
     height: 10px;
     margin: var(--g-spacing-4) 0px;
@@ -49,7 +57,7 @@
       content: '';
       position: absolute;
       width: 10px;
-      background-color: var(--g-color-base-brand);
+      background-color: var(--color-brand-main);
       border-radius: var(--g-spacing-3);
       height: 10px;
       left: -30px;
@@ -58,7 +66,7 @@
       content: '';
       position: absolute;
       width: 10px;
-      background-color: var(--g-color-base-brand);
+      background-color: var(--color-brand-main);
       border-radius: var(--g-spacing-3);
       height: 10px;
       right: -30px;
