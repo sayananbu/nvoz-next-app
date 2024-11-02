@@ -7,7 +7,7 @@ import { TextSizes, TextTags } from '../model/types';
 export type TextProps = {
   tag?: TextTags;
   size?: TextSizes;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   weight?: 'bold' | 'semibold' | 'medium' | 'regular';
 };

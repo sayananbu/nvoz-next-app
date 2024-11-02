@@ -1,11 +1,16 @@
+@import '../../../app/breakpoints.css';
+@import '../../../app/mixins/property-mixin.css';
+
 .slider-controls {
   display: flex;
   width: fit-content;
-  gap: var(--g-spacing-5);
+  gap: var(--g-spacing-2);
+  @media (min-width: $width-sm) {
+    gap: var(--g-spacing-4);
+  }
 
   &__control {
-    width: 60px;
-    height: 60px;
+    @mixin size 50px;
     border-radius: 50%;
     border: 2px solid #000;
     display: flex;
@@ -16,6 +21,11 @@
       border-color 0.2s,
       color 0.2s;
     user-select: none;
+    box-sizing: border-box;
+  
+    @media (min-width: $width-sm) {
+      @mixin size 60px;
+    }
 
     &:hover {
       border-color: var(--color-brand-secondary);

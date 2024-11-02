@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
 import Text from '~shared/text';
 import cn from '~shared/utils/cn';
+
+import CheckIcon from '/public/icons/check.svg';
 
 const cx = cn('benefits-bar');
 
@@ -54,6 +57,14 @@ const BenefitsBar: FC<BenefitsBarProps> = (props) => {
               }
               transition={{ duration: 0.3, delay: (i + 1 + order * 8) / 15 }}
             >
+              <Image
+                className={cx('check-icon')}
+                src={CheckIcon.src}
+                objectFit="cover"
+                width="25"
+                height="25"
+                alt="check"
+              />
               <Text>{item}</Text>
             </motion.li>
           ))}

@@ -1,0 +1,35 @@
+.textarea {
+  width: 100%;
+  background-color: #fff;
+  outline: none;
+  height: 30px;
+  border: none;
+  resize: none;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__undercover {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    padding: 6px 4px;
+    border-radius: 8px;
+    cursor: text;
+    box-sizing: border-box;
+  }
+
+  &__hint {
+    &_error {
+      color: var(--color-brand-error);
+    }
+  }
+
+  &__clear {
+    cursor: pointer;
+  }
+}

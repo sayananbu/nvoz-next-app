@@ -33,7 +33,9 @@ const FeedbackCard: FC<Feedback> = (props) => {
             {name}
           </Text>
           <div className={cx('dot')}></div>
-          <Text tag="p">{deal}</Text>
+          <Text tag="p" className={cx('deal')}>
+            {deal}
+          </Text>
         </div>
       </div>
       <Text tag="p" className={cx('content')}>

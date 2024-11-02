@@ -1,2 +1,2 @@
 import './UI/button.css';
-export { default } from './UI/button';
+export { default, type ButtonProps } from './UI/button';

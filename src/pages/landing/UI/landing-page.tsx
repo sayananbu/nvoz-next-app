@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 
 // import ContactForm from '~features/contact-form';
+import ContactForm from '~features/contact-form';
+import ActionButton from '~shared/action-button';
 import BlockHeader from '~shared/block-header';
+import BounceAnimation from '~shared/bounce-animation';
 import Button from '~shared/button';
 import Heading from '~shared/heading';
 import Lottie from '~shared/lottie';
@@ -9,8 +12,8 @@ import StatisticBar from '~shared/statistic-bar';
 import StepperBlock from '~shared/stepper-block';
 import Text from '~shared/text';
 import cn from '~shared/utils/cn';
+import { scrollToForm } from '~shared/utils/scroll-to-form';
 import Feedbacks from '~widgets/feedbacks';
-import Map from '~widgets/map';
 import OurServices from '~widgets/our-services';
 import Realty from '~widgets/realty';
 import Team from '~widgets/team';
@@ -28,10 +31,8 @@ const benefits = cn('benefits');
 // const typingSpeed = 30;
 
 const LandingPage: FC = () => {
-  //TODO 1 добавить анимаций плавающих фигурок в блок преимуществ
-  //TODO 2 пересмотреть цвета блоков Что входит в стоимость услуг и Примеры работ
-  //TODO 2 навигация
-  //TODO 3 форма обратной связи
+  //TODO 2 пересмотреть цвета блоков Примеры работ
+
   return (
     <>
       <div className={cx()}>
@@ -41,7 +42,7 @@ const LandingPage: FC = () => {
               <div className={about('company-info')}>
                 <div className={about('company-name')}>
                   <Heading tag="h2" size="lg">
-                    1-ая риэлторская компания
+                    Агентство недвижимости
                   </Heading>
                   <Heading tag="h1" size="4xl" className="accent-text">
                     «Новое Время»
@@ -52,9 +53,13 @@ const LandingPage: FC = () => {
                   Ваш надёжный партнёр
                   <br />в мире недвижимости
                 </Text>
-                <Button className={about('action-button')} variant="solid" textWeight="semibold">
+                <ActionButton
+                  className={about('action-button')}
+                  variant="solid"
+                  textWeight="semibold"
+                >
                   Получить бесплатную консультацию
-                </Button>
+                </ActionButton>
               </div>
               <div className={about('short-contacts')}>
                 <Text tag="p">г. Орехово-Зуево, ул. Якова Флиера, д. 9</Text>
@@ -64,7 +69,7 @@ const LandingPage: FC = () => {
               </div>
               <Lottie play speed={0.5} animationData={houseDealHero} className={about('hero')} />
             </div>
-            <div className={about('statistics')}>
+            {/* <div className={about('statistics')}>
               <StatisticBar
                 value="26+ лет"
                 description="Помогаем Вам безопасно покупать, продавать, сдавать и арендовать недвижимость"
@@ -77,7 +82,7 @@ const LandingPage: FC = () => {
                 value="8 000+ сделок"
                 description="Успешно провели специалисты компании, обеспечив безопасность и комфорт для клиентов"
               />
-            </div>
+            </div> */}
           </div>
 
           {/* <Text tag="p" size='6xl' className={cx('animated-text')}>
@@ -89,9 +94,7 @@ const LandingPage: FC = () => {
             />
           </Text> */}
         </header>
-        <section className={benefits()}>
-          {/* <Lottie play animationData={chillAnim} className={cx('slogan__animation')} /> */}
-
+        {/* <section className={benefits()}>
           <article className={benefits('title')}>
             <Text size="5xl" weight="bold">
               Новое время — новые{' '}
@@ -104,35 +107,40 @@ const LandingPage: FC = () => {
           <div className={benefits('container')}>
             {advantages?.map((advantage, i) => <StepperBlock key={i} {...advantage} />)}
           </div>
-        </section>
+          <BounceAnimation variant="family" className={benefits('family-animation')} />
+          <BounceAnimation variant="keys" delay={1} className={benefits('keys-animation')} />
+          <BounceAnimation variant="house" delay={2} className={benefits('house-animation')} />
+          <BounceAnimation
+            variant="security"
+            delay={3}
+            className={benefits('security-animation')}
+          />
+        </section> */}
         <main className={cx('main')}>
-          <section>
+          {/* <section>
             <BlockHeader as="header" className={cx('block-header')}>
               Наши услуги
             </BlockHeader>
             <OurServices />
-          </section>
+          </section> */}
           <section>
             <Realty />
           </section>
-          <section>
+          {/* <section>
             <BlockHeader as="header" className={cx('block-header')}>
               Команда профессионалов
             </BlockHeader>
             <Team />
-          </section>
+          </section> */}
           <section>
             <Feedbacks />
           </section>
-          {/* 
+
           <section>
             <BlockHeader as="header" className={cx('block-header')}>
-              Оставить заявку
+              Свяжитесь с нами
             </BlockHeader>
             <ContactForm />
-          </section>*/}
-          <section>
-            <Map />
           </section>
         </main>
       </div>

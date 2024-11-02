@@ -4,7 +4,7 @@ import '~app/general.css';
 import '~app/normalize.css';
 
 export const metadata: Metadata = {
-  title: '«Новое Время» 1-ая риэлторская компания',
+  title: 'Агентство недвижимости «Новое Время»',
   description: 'Новое время — новые возможности',
 };
 

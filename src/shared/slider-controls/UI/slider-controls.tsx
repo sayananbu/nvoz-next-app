@@ -5,7 +5,7 @@ import cn from '~shared/utils/cn';
 
 const cx = cn('slider-controls');
 
-const arrowSize = 40;
+const arrowSize = 35;
 
 interface SliderControlsProps {
   swiper: any;

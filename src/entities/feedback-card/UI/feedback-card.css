@@ -1,3 +1,6 @@
+@import '../../../app/breakpoints.css';
+@import '../../../app/mixins/text-mixin.css';
+
 .feedback-card {
   display: flex;
   flex-direction: column;
@@ -47,7 +50,17 @@
     color: var(--color-brand-secondary);
     text-decoration: none;
   }
-
+  &__name,
+  &__deal,
+  &__content,
+  &__content__cover {
+    @media (max-width: $width-lg) {
+      @mixin textMD;
+    }
+    @media (max-width: $width-md) {
+      @mixin textLG;
+    }
+  }
   &__content {
     position: relative;
     color: transparent;

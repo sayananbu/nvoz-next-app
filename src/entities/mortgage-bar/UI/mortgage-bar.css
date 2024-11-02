@@ -4,7 +4,7 @@
   padding: var(--g-spacing-3);
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px #a3a3a3;
+  box-shadow: 0px 0px 10px 0px var(--color-hover-gray);
 
   &__list {
     list-style: none;

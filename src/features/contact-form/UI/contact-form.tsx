@@ -1,14 +1,23 @@
 'use client';
-import React, { useMemo, useRef } from 'react';
+import React, { FC, useState } from 'react';
 
-import { Button, Card, TextArea, TextInput } from '@gravity-ui/uikit';
 import { zodResolver } from '@hookform/resolvers/zod';
-import IMask, { MaskedPattern } from 'imask';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import Image from 'next/image';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { Element } from 'react-scroll';
 
+import { sendDataToTelegram } from 'app/actions';
+import Button from '~shared/button';
+import Input from '~shared/input';
+import Map from '~shared/map';
+import PhoneInput from '~shared/phone-input';
+import Text from '~shared/text';
+import TextArea from '~shared/textarea';
 import cn from '~shared/utils/cn';
 
 import { validationSchema } from '../model/schema';
+
+import LoaderIcon from 'public/icons/loader.svg';
 
 const cx = cn('contact-form');
 interface FormDataTypes {
@@ -16,83 +25,138 @@ interface FormDataTypes {
   telephone: string;
   description?: string;
 }
+interface ContactFormProps {
+  className?: string;
+}
+const SUCCESS = 'Заявка успешно отправлена! Скоро с вами свяжутся.';
+const SENDING = 'Запрос в обработке...';
+const ERROR = 'Упс... ошибка, попробуйте позднее.';
+const MESSAGE_TIMEOUT = 5000;
+const FORM_DEFAULT_VALUES = {
+  name: '',
+  telephone: '',
+  description: '',
+};
 
-const ContactForm = () => {
+const ContactForm: FC<ContactFormProps> = (props) => {
+  const { className = '' } = props;
+
   const {
-    register,
     handleSubmit,
-    watch,
-    formState: { errors, touchedFields },
+    control,
+    reset,
+    formState: { errors, touchedFields, isSubmitted },
   } = useForm<FormDataTypes>({
     resolver: zodResolver(validationSchema),
     mode: 'onChange',
+    defaultValues: FORM_DEFAULT_VALUES,
+  });
+  const [status, setStatus] = useState({
+    error: false,
+    success: false,
+    sending: false,
   });
 
-  const phoneMask = useRef<MaskedPattern<string>>(
-    IMask.createMask({
-      mask: '+{7} (000) 000-00-00',
-    }),
-  );
-
-  const onSubmit: SubmitHandler<FormDataTypes> = (data) => console.log(data);
-  const registeredPhone = useMemo(() => {
-    const mask = phoneMask.current;
-    const phoneRegister = register('telephone');
-    const { onChange: baseOnChange } = phoneRegister;
-    const maskedOnChange = async (e) => {
-      if (e.target.value) {
-        mask.resolve(e.target.value);
-        e.target.value = mask.value;
-        console.log(mask.value);
+  const onSubmit: SubmitHandler<FormDataTypes> = async (data) => {
+    if (!status.sending) {
+      setStatus({ ...status, sending: true });
+      try {
+        const response = await sendDataToTelegram(data);
+        if (response.ok) {
+          setStatus({ sending: false, success: true, error: false });
+          reset();
+        } else {
+          setStatus({ sending: false, success: false, error: true });
+          console.log(response);
+        }
+      } catch (e) {
+        console.log(e);
+        setStatus({ sending: false, success: false, error: true });
       }
-      baseOnChange(e);
-    };
-    phoneRegister.onChange = maskedOnChange;
-    return phoneRegister;
-  }, [register]);
+      setTimeout(
+        () => setStatus({ sending: false, success: false, error: false }),
+        MESSAGE_TIMEOUT,
+      );
+    }
+  };
+
+  const getErrorMessage = (key: keyof FormDataTypes) => {
+    return (touchedFields[key] || isSubmitted) && errors[key]?.message;
+  };
+  const isMessageVisible = Object.values(status).some(Boolean);
 
   return (
-    <form className={cx()} onSubmit={handleSubmit(onSubmit)}>
-      <Card className={cx('undercover')} view="outlined">
-        <TextInput
-          size="xl"
-          hasClear={true}
-          placeholder="Александров Александр"
-          type="text"
-          value={watch('name')}
-          className={cx('input')}
-          error={touchedFields.name && errors.name?.message}
-          errorMessage={errors.name?.message}
-          label="Ваше имя:"
-          {...register('name')}
-        />
-        <TextInput
-          size="xl"
-          hasClear={true}
-          placeholder="+7 (977) 429-07-29"
-          type="tel"
-          className={cx('input')}
-          label="Ваш телефон:"
-          error={errors.telephone?.message}
-          errorMessage={errors.telephone?.message}
-          {...registeredPhone}
-        />
-        <TextArea
-          placeholder="Что Вас интересует..."
-          minRows={3}
-          maxRows={5}
-          hasClear={true}
-          size="xl"
-          className={cx('input')}
-          error={errors.description?.message}
-          errorMessage={errors.description?.message}
-          {...register('description')}
-        />
-        <Button size="xl" type="submit" view="outlined-action" className={cx('submit')}>
-          Отправить
-        </Button>
-      </Card>
-    </form>
+    <Element id="contact-form">
+      <form className={cx('', className)} onSubmit={handleSubmit(onSubmit)}>
+        <div className={cx('undercover')}>
+          <Controller
+            name="name"
+            control={control}
+            render={({ field }) => (
+              <Input
+                label="Фамилия Имя"
+                placeholder="Александров Александр"
+                error={getErrorMessage('name')}
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name="telephone"
+            control={control}
+            render={({ field }) => (
+              <PhoneInput
+                label="Телефон:"
+                placeholder="+7 (977) 429-07-29"
+                error={getErrorMessage('telephone')}
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name="description"
+            control={control}
+            render={({ field }) => (
+              <TextArea
+                label="Вас интересует:"
+                placeholder="Хотелось бы купить квартиру..."
+                error={getErrorMessage('description')}
+                minRows={3}
+                maxRows={4}
+                {...field}
+              />
+            )}
+          />
+          <Button type="submit" className={cx('submit')}>
+            Оставить заявку
+          </Button>
+          <div
+            className={cx('status-message', {
+              visible: isMessageVisible,
+              error: status.error,
+              success: status.success,
+              loading: status.sending,
+            })}
+          >
+            <Text tag="p" size="lg">
+              {status.success && SUCCESS}
+              {status.error && ERROR}
+              {status.sending && SENDING}
+            </Text>
+            {status.sending && (
+              <Image
+                src={LoaderIcon.src}
+                className={cx('status-message__loader')}
+                alt="loader"
+                width={30}
+                height={30}
+              />
+            )}
+          </div>
+        </div>
+        <Map />
+      </form>
+    </Element>
   );
 };
 
