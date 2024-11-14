@@ -16,7 +16,7 @@ interface BounceAnimationProps {
 const cx = cn('bounce-animation');
 
 const BounceAnimation: FC<BounceAnimationProps> = (props) => {
-  const { variant, duration = 8, delay = 0, className = '' } = props;
+  const { variant, duration = 10, delay = 0, className = '' } = props;
 
   const animationDuration = duration > 0 ? `${duration}s` : '';
   const animationDelay = delay > 0 ? `${delay}s` : '';

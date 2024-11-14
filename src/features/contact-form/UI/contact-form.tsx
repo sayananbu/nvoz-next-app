@@ -119,7 +119,7 @@ const ContactForm: FC<ContactFormProps> = (props) => {
             render={({ field }) => (
               <TextArea
                 label="Вас интересует:"
-                placeholder="Хотелось бы купить квартиру..."
+                placeholder="Хотелось бы выгодно купить квартиру в Москве"
                 error={getErrorMessage('description')}
                 minRows={3}
                 maxRows={4}
@@ -128,7 +128,7 @@ const ContactForm: FC<ContactFormProps> = (props) => {
             )}
           />
           <Button type="submit" className={cx('submit')}>
-            Оставить заявку
+            Отправить заявку
           </Button>
           <div
             className={cx('status-message', {

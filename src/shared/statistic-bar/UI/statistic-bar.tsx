@@ -15,9 +15,13 @@ const StatisticBar: FC<StatisticBarProps> = (props) => {
   const { value, description } = props;
   return (
     <div className={cx()}>
-      <Heading>{value}</Heading>
+      <Heading className={cx('value')} size="xl">
+        {value}
+      </Heading>
       <div className={cx('line')}></div>
-      <Text>{description}</Text>
+      <Text className={cx('description')} size="md">
+        {description}
+      </Text>
     </div>
   );
 };

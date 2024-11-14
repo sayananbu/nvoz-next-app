@@ -1,0 +1,115 @@
+@import '../../../app/mixins/text-mixin.css';
+@import '../../../app/mixins/property-mixin.css';
+@import '../../../app/breakpoints.css';
+
+.benefits {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__keys-animation {
+    position: absolute;
+    z-index: 50;
+    left: -40px;
+    bottom: 200px;
+    @mixin size 350px;
+  }
+
+  &__family-animation {
+    position: absolute;
+    z-index: 50;
+    right: -20px;
+    top: 240px;
+    @mixin size 160px;
+
+    @media (min-width: $width-sm) {
+      
+    }
+  }
+
+  &__house-animation {
+    position: absolute;
+    z-index: 50;
+    left: -40px;
+    top: 350px;
+    @mixin size 350px;
+  }
+
+  &__security-animation {
+    position: absolute;
+    z-index: 50;
+    right: -40px;
+    bottom: 350px;
+    @mixin size 350px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 100px;
+    text-align: center;
+    max-width: 470px;
+
+    @media (min-width: $width-sm) {
+      max-width: 590px;
+    }
+    @media (min-width: $width-lg) {
+      max-width: 850px;
+    }
+
+    &__slogan,
+    &__slogan_accent {
+      @media (min-width: $width-xs) {
+        @mixin text3XL bold;
+      }
+      @media (min-width: $width-md) {
+        @mixin text4XL bold;
+      }
+      @media (min-width: $width-lg) {
+        @mixin text5XL bold;
+      }
+    }
+
+    &__description {
+      margin-top: 10px;
+
+      @media (min-width: $width-lg) {
+        margin-top: 20px;
+      }
+
+      @media (min-width: $width-xs) {
+        @mixin textMD;
+      }
+      @media (min-width: $width-md) {
+        @mixin textLG;
+      }
+      @media (min-width: $width-lg) {
+        @mixin text2XL;
+      }
+      &_accent {
+        @media (min-width: $width-xs) {
+          @mixin textMD 600;
+        }
+        @media (min-width: $width-md) {
+          @mixin textLG 600;
+        }
+        @media (min-width: $width-lg) {
+          @mixin text2XL 600;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+  }
+}

@@ -1,5 +1,5 @@
 .bounce-animation {
-  filter: blur(7px);
+  filter: blur(5px);
   animation-name: bounce;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;

@@ -1,64 +1,63 @@
-@define-mixin text $size, $height:100%, $weight: 400 {
+@define-mixin text $size, $height: 100%, $weight: 400 {
   font-size: $size;
   line-height: $height;
   font-weight: $weight;
 }
 
 /* Heading mixins */
-@define-mixin heading4XL  {
-  @mixin text 72px, 100%, bold;
+@define-mixin heading4XL $weight: bold {
+  @mixin text 72px, 100%, $weight;
 }
-@define-mixin heading3XL  {
-  @mixin text 60px, 100%, bold;
+@define-mixin heading3XL $weight: bold {
+  @mixin text 60px, 100%, $weight;
 }
-@define-mixin heading2XL  {
-  @mixin text 48px, 100%, bold;
+@define-mixin heading2XL $weight: bold {
+  @mixin text 48px, 100%, $weight;
 }
-@define-mixin headingXL  {
-  @mixin text 36px, 120%, bold;
+@define-mixin headingXL $weight: bold {
+  @mixin text 36px, 120%, $weight;
 }
-@define-mixin headingLG  {
-  @mixin text 30px, 120%, bold;
+@define-mixin headingLG $weight: bold {
+  @mixin text 30px, 120%, $weight;
 }
-@define-mixin headingMD  {
-  @mixin text 24px, 120%, bold;
+@define-mixin headingMD $weight: bold {
+  @mixin text 24px, 120%, $weight;
 }
-@define-mixin headingSM  {
-  @mixin text 20px, 120%, bold;
+@define-mixin headingSM $weight: bold {
+  @mixin text 20px, 120%, $weight;
 }
-@define-mixin headingXS  {
-  @mixin text 16px, 120%, bold;
+@define-mixin headingXS $weight: bold {
+  @mixin text 16px, 120%, $weight;
 }
 
 /* Text mixins */
-@define-mixin text6XL  {
-  @mixin text 60px, 60px;
+@define-mixin text6XL $weight: 400 {
+  @mixin text 60px, 60px, $weight;
 }
-@define-mixin text5XL  {
-  @mixin text 48px, 48px;
+@define-mixin text5XL $weight: 400 {
+  @mixin text 48px, 48px, $weight;
 }
-@define-mixin text4XL  {
-  @mixin text 36px, 40px;
+@define-mixin text4XL $weight: 400 {
+  @mixin text 36px, 40px, $weight;
 }
-@define-mixin text3XL  {
-  @mixin text 30px, 36px;
+@define-mixin text3XL $weight: 400 {
+  @mixin text 30px, 36px, $weight;
 }
-@define-mixin text2XL  {
-  @mixin text 24px, 32px;
+@define-mixin text2XL $weight: 400 {
+  @mixin text 24px, 32px, $weight;
 }
-@define-mixin textXL  {
-  @mixin text 20px, 28px;
+@define-mixin textXL $weight: 400 {
+  @mixin text 20px, 28px, $weight;
 }
-@define-mixin textLG  {
-  @mixin text 18px, 28px;
+@define-mixin textLG $weight: 400 {
+  @mixin text 18px, 28px, $weight;
 }
-@define-mixin textMD  {
-  @mixin text 16px, 24px;
+@define-mixin textMD $weight: 400 {
+  @mixin text 16px, 24px, $weight;
 }
-@define-mixin textSM  {
-  @mixin text 14px, 20px;
+@define-mixin textSM $weight: 400 {
+  @mixin text 14px, 20px, $weight;
 }
-@define-mixin textXS  {
-  @mixin text 12px, 16px;
+@define-mixin textXS $weight: 400 {
+  @mixin text 12px, 16px, $weight;
 }
-

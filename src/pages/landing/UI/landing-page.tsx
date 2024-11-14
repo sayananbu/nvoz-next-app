@@ -1,30 +1,25 @@
 import React, { FC } from 'react';
 
-// import ContactForm from '~features/contact-form';
 import ContactForm from '~features/contact-form';
 import ActionButton from '~shared/action-button';
 import BlockHeader from '~shared/block-header';
-import BounceAnimation from '~shared/bounce-animation';
-import Button from '~shared/button';
 import Heading from '~shared/heading';
 import Lottie from '~shared/lottie';
 import StatisticBar from '~shared/statistic-bar';
-import StepperBlock from '~shared/stepper-block';
 import Text from '~shared/text';
 import cn from '~shared/utils/cn';
-import { scrollToForm } from '~shared/utils/scroll-to-form';
+import Benefits from '~widgets/benefits';
 import Feedbacks from '~widgets/feedbacks';
-import OurServices from '~widgets/our-services';
+// import OurServices from '~widgets/our-services';
 import Realty from '~widgets/realty';
-import Team from '~widgets/team';
+// import Team from '~widgets/team';
 
-import { advantages } from '../model/data';
+import './landing-page.css';
 
 import houseDealHero from 'public/assets/house_deal.json';
 import wavesAnim from 'public/assets/waves.json';
 const cx = cn('page');
 const about = cn('about');
-const benefits = cn('benefits');
 
 // const TIMEOUT_HOLD = 8000;
 // const TIMEOUT_REPEAT = 2000;
@@ -41,48 +36,58 @@ const LandingPage: FC = () => {
             <div className={about('container')}>
               <div className={about('company-info')}>
                 <div className={about('company-name')}>
-                  <Heading tag="h2" size="lg">
+                  <Heading tag="h2" size="xs" className={about('company-name_first')}>
                     Агентство недвижимости
                   </Heading>
-                  <Heading tag="h1" size="4xl" className="accent-text">
+                  <Heading
+                    tag="h1"
+                    size="lg"
+                    className={about('company-name_second', 'accent-text')}
+                  >
                     «Новое Время»
                   </Heading>
                 </div>
 
-                <Text tag="p" size="5xl" className={about('slogan')}>
+                <Text tag="p" size="xl" className={about('slogan')}>
                   Ваш надёжный партнёр
-                  <br />в мире недвижимости
+                  <br /> в мире недвижимости
                 </Text>
                 <ActionButton
                   className={about('action-button')}
                   variant="solid"
                   textWeight="semibold"
                 >
-                  Получить бесплатную консультацию
+                  Оставить заявку
                 </ActionButton>
               </div>
               <div className={about('short-contacts')}>
-                <Text tag="p">г. Орехово-Зуево, ул. Якова Флиера, д. 9</Text>
-                <Heading tag="h4" size="lg">
+                <Text tag="p" size="sm">
+                  г. Орехово-Зуево, ул. Якова Флиера, д. 9
+                </Text>
+                <Heading tag="h4" size="sm">
                   +7 (977) 429-07-29
                 </Heading>
               </div>
               <Lottie play speed={0.5} animationData={houseDealHero} className={about('hero')} />
             </div>
-            {/* <div className={about('statistics')}>
+            <div className={about('statistics')}>
               <StatisticBar
-                value="26+ лет"
-                description="Помогаем Вам безопасно покупать, продавать, сдавать и арендовать недвижимость"
+                value="26+"
+                description="Лет помогаем Вам безопасно покупать, продавать, сдавать и арендовать недвижимость"
               />
               <StatisticBar
-                value="20 000+ обращений"
-                description="Ежегодно! Клиенты компании получают круглосуточную поддержку и консультации по всем вопросам, связанным с недвижимостью"
+                value="38+"
+                description="Городов и населенных пунктов, в которых мы уже помогли приобрести или продать недвижимость"
               />
               <StatisticBar
-                value="8 000+ сделок"
-                description="Успешно провели специалисты компании, обеспечив безопасность и комфорт для клиентов"
+                value="12 000+"
+                description="Сделок успешно провели специалисты компании, обеспечив безопасность и комфорт для клиентов"
               />
-            </div> */}
+              <StatisticBar
+                value="20 000+"
+                description="Обращений ежегодно. Клиенты агентства получают постоянную поддержку по всем вопросам, связанным с недвижимостью"
+              />
+            </div>
           </div>
 
           {/* <Text tag="p" size='6xl' className={cx('animated-text')}>
@@ -94,28 +99,7 @@ const LandingPage: FC = () => {
             />
           </Text> */}
         </header>
-        {/* <section className={benefits()}>
-          <article className={benefits('title')}>
-            <Text size="5xl" weight="bold">
-              Новое время — новые{' '}
-              <Text size="5xl" weight="bold" className="accent-text">
-                возможности
-              </Text>
-            </Text>
-            <Text size="3xl">Почему обращаются именно к Нам</Text>
-          </article>
-          <div className={benefits('container')}>
-            {advantages?.map((advantage, i) => <StepperBlock key={i} {...advantage} />)}
-          </div>
-          <BounceAnimation variant="family" className={benefits('family-animation')} />
-          <BounceAnimation variant="keys" delay={1} className={benefits('keys-animation')} />
-          <BounceAnimation variant="house" delay={2} className={benefits('house-animation')} />
-          <BounceAnimation
-            variant="security"
-            delay={3}
-            className={benefits('security-animation')}
-          />
-        </section> */}
+        <Benefits />
         <main className={cx('main')}>
           {/* <section>
             <BlockHeader as="header" className={cx('block-header')}>

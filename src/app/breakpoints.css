@@ -1,4 +1,6 @@
-$width-xs: 0;
+$width-3xs: 350px;
+$width-2xs: 410px;
+$width-xs: 480px;
 $width-sm: 576px;
 $width-md: 768px;
 $width-lg: 992px;

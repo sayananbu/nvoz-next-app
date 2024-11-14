@@ -1,17 +1,20 @@
 @import '../../../app/mixins/text-mixin.css';
-@import '../../../app/mixins/property-mixin.css';
 @import '../../../app/breakpoints.css';
 
 .page {
   position: relative;
   z-index: 100;
   width: 100%;
-  padding: 60px 16px;
+  padding: 30px 8px;
   box-sizing: border-box;
   max-width: $width-xxl;
   display: flex;
   flex-direction: column;
   gap: 120px;
+
+  @media (min-width: $width-xs) {
+    padding: 30px 16px;
+  }
 
   &__description {
     margin-top: var(--g-spacing-6);
@@ -30,21 +33,6 @@
       bottom: -300px;
       left: 0;
     }
-  }
-
-  &__animated-text {
-    display: inline-block;
-    margin-top: calc(var(--g-spacing-10) * 3);
-    max-width: 580px;
-    height: 150px;
-  }
-
-  &__animated-arrow {
-    position: absolute;
-    z-index: 80;
-    bottom: -75px;
-    left: -20px;
-    transform: rotate(90deg);
   }
 
   &__block-header {
@@ -67,7 +55,6 @@
   display: flex;
   flex-direction: column;
   z-index: 120;
-  height: 820px;
 }
 
 .about {
@@ -77,33 +64,99 @@
   flex-direction: column;
   z-index: 50;
 
-  &__action-button {
-    margin-top: 46px;
-    width: fit-content;
-  }
-
-  &__slogan {
-    margin-top: 46px;
-  }
-
   &__company-info {
     display: flex;
     position: relative;
+    box-sizing: border-box;
     z-index: 100;
     flex-direction: column;
-    gap: var(--g-spacing-3);
-    width: fit-content;
-    margin: 46px 0 0 46px;
+    width: 100%;
+    padding: 26px 16px 26px 16px;
 
-    @media (max-width: $width-md) {
-      margin: 23px 0 0 23px;
+    @media (min-width: $width-sm) {
+      padding: 32px 24px 32px 24px;
+    }
+    @media (min-width: $width-md) {
+      padding: 38px 30px 38px 30px;
+    }
+    @media (min-width: $width-lg) {
+      padding: 46px;
     }
   }
 
   &__company-name {
     display: flex;
     flex-direction: column;
-    gap: var(--g-spacing-4);
+    gap: var(--g-spacing-1);
+
+    @media (min-width: $width-sm) {
+      gap: var(--g-spacing-4);
+    }
+
+    .about &_first {
+      font-weight: 500;
+      @media (min-width: $width-2xs) {
+        @mixin headingSM 500;
+      }
+      @media (min-width: $width-sm) {
+        @mixin headingMD 500;
+      }
+      @media (min-width: $width-md) {
+        @mixin headingLG 500;
+      }
+      @media (min-width: $width-xl) {
+        @mixin headingXL 500;
+      }
+    }
+    .about &_second {
+      @media (min-width: $width-2xs) {
+        @mixin headingXL;
+      }
+      @media (min-width: $width-sm) {
+        @mixin heading2XL;
+      }
+      @media (min-width: $width-md) {
+        @mixin heading3XL;
+      }
+      @media (min-width: $width-xl) {
+        @mixin heading4XL;
+      }
+    }
+  }
+
+  &__slogan {
+    margin-top: 170px;
+
+    @media (min-width: $width-2xs) {
+      @mixin text2XL;
+    }
+    @media (min-width: $width-sm) {
+      @mixin text3XL;
+    }
+    @media (min-width: $width-md) {
+      @mixin text4XL;
+    }
+    @media (min-width: $width-xl) {
+      @mixin text5XL;
+      margin-top: 200px;
+    }
+  }
+
+  &__action-button {
+    margin-top: 23px;
+    width: 100%;
+
+    @media (min-width: $width-2xs) {
+      width: 350px;
+    }
+
+    & span {
+      @mixin textMD 600;
+
+      @media (min-width: $width-2xs) {
+        @mixin textLG 600;
+      }
+    }
   }
 
   &__short-contacts {
@@ -118,13 +171,87 @@
 
     p {
       font-weight: 500;
+
+      @media (min-width: $width-3xs) {
+        @mixin textSM;
+      }
+      @media (min-width: $width-sm) {
+        @mixin textMD;
+      }
+      @media (min-width: $width-md) {
+        @mixin textXL;
+      }
+    }
+
+    h4 {
+      @media (min-width: $width-3xs) {
+        @mixin headingSM;
+      }
+      @media (min-width: $width-sm) {
+        @mixin headingMD;
+      }
+      @media (min-width: $width-md) {
+        @mixin headingLG;
+      }
     }
   }
 
-  &__statistics {
-    display: flex;
-    align-items: flex-end;
-    gap: 18px;
+  &__hero {
+    position: absolute;
+    z-index: 80;
+    right: 0px;
+    top: 30px;
+    width: 280px;
+
+    @media (min-width: $width-3xs) {
+      right: -100px;
+      top: -10px;
+      width: 360px;
+    }
+    @media (min-width: $width-2xs) {
+      right: -140px;
+      top: -25px;
+      width: 400px;
+    }
+    @media (min-width: $width-xs) {
+      right: -150px;
+      top: -75px;
+      width: 480px;
+    }
+    @media (min-width: $width-sm) {
+      right: -150px;
+      top: -50px;
+    }
+    @media (min-width: 620px) {
+      right: -150px;
+      top: -60px;
+      width: 520px;
+    }
+    @media (min-width: 690px) {
+      right: -150px;
+      top: -110px;
+      width: 600px;
+    }
+    @media (min-width: 830px) {
+      right: -150px;
+      top: -110px;
+      width: 650px;
+    }
+    @media (min-width: 930px) {
+      right: -180px;
+      top: -130px;
+      width: 750px;
+    }
+    @media (min-width: 1090px) {
+      right: -80px;
+      top: -130px;
+      width: 750px;
+    }
+    @media (min-width: 1300px) {
+      right: -80px;
+      top: -130px;
+      width: 850px;
+    }
   }
 
   &__container {
@@ -140,68 +267,15 @@
     box-shadow: 0px 0px 10px 0px var(--color-hover-gray);
     overflow: hidden;
   }
-  &__hero {
-    position: absolute;
-    z-index: 80;
-    top: -150px;
-    right: -50px;
-    width: 750px;
+
+  &__statistics {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 18px;
+    @media (min-width: $width-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
-.benefits {
-  position: relative;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-  &__keys-animation {
-    position: absolute;
-    z-index: 50;
-    left: -40px;
-    bottom: 200px;
-    @mixin size 350px;
-  }
-
-  &__family-animation {
-    position: absolute;
-    z-index: 50;
-    right: 20px;
-    top: 50px;
-    @mixin size 400px;
-  }
-
-  &__house-animation {
-    position: absolute;
-    z-index: 50;
-    left: -40px;
-    top: 350px;
-    @mixin size 350px;
-  }
-
-  &__security-animation {
-    position: absolute;
-    z-index: 50;
-    right: -40px;
-    bottom: 350px;
-    @mixin size 350px;
-  }
-
-  &__title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 60px;
-  }
-
-  &__container {
-    display: flex;
-    z-index: 100;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-  }
-}

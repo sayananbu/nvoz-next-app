@@ -2,6 +2,8 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from 'react';
 
 import Text, { TextSizes, TextWeights } from '~shared/text';
 import cn from '~shared/utils/cn';
+
+import './button.css';
 const cx = cn('button');
 
 export type ButtonProps = {

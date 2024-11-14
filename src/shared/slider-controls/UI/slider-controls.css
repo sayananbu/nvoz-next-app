@@ -2,10 +2,11 @@
 @import '../../../app/mixins/property-mixin.css';
 
 .slider-controls {
-  display: flex;
+  display: none;
   width: fit-content;
   gap: var(--g-spacing-2);
   @media (min-width: $width-sm) {
+    display: flex;
     gap: var(--g-spacing-4);
   }
 

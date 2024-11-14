@@ -1,23 +1,40 @@
+@import '../../../app/mixins/text-mixin.css';
+@import '../../../app/mixins/property-mixin.css';
+@import '../../../app/breakpoints.css';
+
 .stepper-block {
   width: 100%;
   display: flex;
   position: relative;
-  padding: 45px 0;
+  padding: 20px 0;
+
+  @media (min-width: $width-lg) {
+    padding: 45px 0;
+  }
 
   &:nth-child(even) {
     justify-content: flex-end;
+
     .stepper-block__text {
-      padding-left: 30px;
+      padding-left: 10px;
       padding-right: 0;
       text-align: left;
+
+      @media (min-width: $width-lg) {
+        padding-left: 30px;
+      }
     }
   }
 
   &__text {
     width: 50%;
-    padding-right:30px;
+    padding-right: 10px;
     box-sizing: border-box;
     text-align: right;
+
+    @media (min-width: $width-lg) {
+      padding-right: 30px;
+    }
   }
 
   &__description {
@@ -38,15 +55,45 @@
     }
   }
 
+  &__description {
+    @media (min-width: $width-2xs) {
+      @mixin textSM;
+    }
+    @media (min-width: $width-sm) {
+      @mixin textMD;
+    }
+    @media (min-width: $width-md) {
+      @mixin textLG;
+    }
+    @media (min-width: $width-lg) {
+      @mixin textXL;
+    }
+  }
+
   &__title {
     margin-bottom: 12px;
     position: relative;
+
+    @media (min-width: $width-2xs) {
+      @mixin textMD bold;
+    }
+    @media (min-width: $width-xs) {
+      @mixin textLG bold;
+    }
+    @media (min-width: $width-sm) {
+      @mixin textXL bold;
+    }
+    @media (min-width: $width-md) {
+      @mixin text2XL bold;
+    }
+    @media (min-width: $width-lg) {
+      @mixin text3XL bold;
+    }
   }
 
   &__dot {
     z-index: 20;
-    width: 16px;
-    height: 16px;
+    @mixin size 10px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -55,6 +102,13 @@
     margin: 0 auto;
     border-radius: 50%;
     background: var(--color-brand-secondary);
+
+    @media (min-width: $width-md) {
+      @mixin size 12px;
+    }
+    @media (min-width: $width-lg) {
+      @mixin size 16px;
+    }
   }
 
   &__line {
